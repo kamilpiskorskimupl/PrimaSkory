@@ -1,0 +1,23 @@
+object Commons: TCommons
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 262
+  HorizontalOffset = 1803
+  VerticalOffset = 1091
+  Width = 387
+  object DbWysylka: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    ClientCodepage = 'UTF8'
+    Properties.Strings = (
+      'codepage=UTF8'
+    )
+    Port = 0
+    Database = 'WYSYLKA_SKOR'
+    User = 'sa'
+    Protocol = 'FreeTDS_MsSQL>=2005'
+    LibraryLocation = 'libsybdb.so.5.1.0'
+    Left = 64
+    Top = 40
+  end
+end

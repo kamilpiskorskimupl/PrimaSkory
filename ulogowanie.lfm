@@ -1,0 +1,314 @@
+object FormLogowanie: TFormLogowanie
+  Left = 509
+  Height = 1024
+  Top = 147
+  Width = 1280
+  Caption = 'Prima - Logowanie'
+  ClientHeight = 1024
+  ClientWidth = 1280
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.12.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 1024
+    Top = 0
+    Width = 1280
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 1024
+    ClientWidth = 1280
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 872
+      Top = 1
+      Width = 400
+      Align = alLeft
+      ClientHeight = 872
+      ClientWidth = 400
+      TabOrder = 0
+      object GroupBox1: TGroupBox
+        Left = 1
+        Height = 870
+        Top = 1
+        Width = 398
+        Align = alClient
+        Caption = 'Wybierz pierwszą literę nazwiska:'
+        ClientHeight = 849
+        ClientWidth = 394
+        TabOrder = 0
+        object RxLiteraList: TMVRxDBGrid
+          Left = 0
+          Height = 849
+          Top = 0
+          Width = 394
+          TitleButtons = False
+          AutoSort = True
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = DSLiteraList
+          Font.Height = -40
+          Options = [dgEditing, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentColor = False
+          ParentFont = False
+          ReadOnly = True
+          Scrollbars = ssNone
+          TabOrder = 0
+          OnCellClick = RxLiteraListCellClick
+          OnlyFilteredLookup = False
+          OverrideEmptyText = False
+          PreciseLookupSort = False
+        end
+      end
+    end
+    object Panel3: TPanel
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 401
+      Height = 872
+      Top = 1
+      Width = 878
+      Align = alLeft
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ClientHeight = 872
+      ClientWidth = 878
+      TabOrder = 1
+      object GroupBox2: TGroupBox
+        Left = 1
+        Height = 870
+        Top = 1
+        Width = 876
+        Align = alClient
+        Caption = 'Wybierz operatora:'
+        ClientHeight = 849
+        ClientWidth = 872
+        TabOrder = 0
+        object RxLoginList: TMVRxDBGrid
+          Left = 0
+          Height = 849
+          Top = 0
+          Width = 872
+          TitleButtons = False
+          AutoSort = True
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+          Align = alClient
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = DSLoginList
+          Font.Height = -40
+          Options = [dgEditing, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ParentColor = False
+          ParentFont = False
+          ReadOnly = True
+          Scrollbars = ssNone
+          TabOrder = 0
+          OnlyFilteredLookup = False
+          OverrideEmptyText = False
+          PreciseLookupSort = False
+        end
+      end
+    end
+    object Panel4: TPanel
+      Left = 1
+      Height = 150
+      Top = 873
+      Width = 1278
+      Align = alBottom
+      Caption = 'MULTIVAC PRIMA'
+      TabOrder = 2
+    end
+  end
+  object DSLiteraList: TDataSource
+    DataSet = ZLiteraList
+    Left = 137
+    Top = 302
+  end
+  object ZLiteraList: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT'
+      'LEFT(OPR_NAZWISKO, 1) AS OPR_LITERA'
+      'FROM OPERATORZY'
+      'ORDER BY OPR_LITERA'
+    )
+    Params = <>
+    Left = 137
+    Top = 416
+    object ZLiteraListOPR_LITERA: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'OPR_LITERA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnChange = ZLiteraListOPR_LITERAChange
+      Size = 1
+    end
+  end
+  object ZLoginList: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT OPR_IMIE, OPR_NAZWISKO FROM OPERATORZY WHERE LEFT(OPR_NAZWISKO, 1) = :litera'
+    )
+    Params = <    
+      item
+        DataType = ftString
+        Name = 'litera'
+        ParamType = ptInput
+      end>
+    Left = 544
+    Top = 416
+    ParamData = <    
+      item
+        DataType = ftString
+        Name = 'litera'
+        ParamType = ptInput
+      end>
+    object ZLoginListOPR_IMIE: TStringField
+      FieldKind = fkData
+      FieldName = 'OPR_IMIE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZLoginListOPR_NAZWISKO: TStringField
+      FieldKind = fkData
+      FieldName = 'OPR_NAZWISKO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object DSLoginList: TDataSource
+    DataSet = ZLoginList
+    Left = 544
+    Top = 328
+  end
+end

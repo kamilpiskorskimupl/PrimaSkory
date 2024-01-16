@@ -1,0 +1,9 @@
+backup/
+lib/
+PrimaSkory
+PrimaSkory.exe
+PrimaSkory.res
+*.log
+*.7z
+*.zip
+*.dbg
