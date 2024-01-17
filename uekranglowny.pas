@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ComCtrls, DBCtrls, Buttons, Grids, Calendar, DateTimePicker, switches,
-  rxdbgrid, rxswitch, rxclock, uGxDateField, ZDataset, LCLType;
+  rxdbgrid, rxswitch, rxclock, ZDataset, LCLType;
 
 type
 

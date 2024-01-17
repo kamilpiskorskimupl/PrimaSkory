@@ -6,8 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  uMVRxDBGrid, ZDataset, DBGrids, Buttons, uEkranGlowny,
-  uCEFScrollViewComponent;
+  uMVRxDBGrid, ZDataset, DBGrids, Buttons, uEkranGlowny;
 
 type
 
@@ -38,8 +37,6 @@ type
     procedure BtnRightPgDownClick(Sender: TObject);
     procedure BtnRightPgUpClick(Sender: TObject);
     procedure BtnLeftPgUpClick(Sender: TObject);
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure GridPageUp(AGrid: TMVRxDBGrid);
     procedure GridPageDown(AGrid: TMVRxDBGrid);
     procedure BtnZalogujClick(Sender: TObject);
@@ -84,17 +81,6 @@ begin
   RxLiteraListCellClick(RxLiteraList.SelectedColumn);
 end;
 
-procedure TFormLogowanie.FormKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-    Close;
-end;
-
-procedure TFormLogowanie.FormKeyPress(Sender: TObject; var Key: char);
-begin
-  Close;
-end;
-
 procedure TFormLogowanie.BtnLeftPgDownClick(Sender: TObject);
 begin
   GridPageDown(RxLiteraList);
@@ -133,13 +119,12 @@ end;
 
 procedure TFormLogowanie.BtnZalogujClick(Sender: TObject);
 begin
-  CLOSE;
-  //OprId := ZLoginListOPR_ID.AsInteger;
-  //if OprId<1 then ShowMessage('Proszę wybrać operatora!')
-  //else begin
-  //  OprNazwa := ZLoginListOPR_NAZWA.AsString;
-  //  TFormEkranGlowny.Execute(OprId, OprNazwa);
-  //end;
+  OprId := ZLoginListOPR_ID.AsInteger;
+  if OprId<1 then ShowMessage('Proszę wybrać operatora!')
+  else begin
+    OprNazwa := ZLoginListOPR_NAZWA.AsString;
+    TFormEkranGlowny.Execute(OprId, OprNazwa);
+  end;
 end;
 
 procedure TFormLogowanie.RxLiteraListCellClick(Column: TColumn);
