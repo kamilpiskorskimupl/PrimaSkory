@@ -1,52 +1,423 @@
 object FormEkranGlowny: TFormEkranGlowny
-  Left = 533
+  Left = 647
   Height = 1024
-  Top = 209
+  Top = 232
   Width = 1280
   Caption = 'Prima Skóry'
   ClientHeight = 1024
   ClientWidth = 1280
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
   LCLVersion = '2.0.12.0'
-  object Panel1: TPanel
-    Left = 0
-    Height = 50
-    Top = 0
-    Width = 1280
-    Align = alTop
-    Caption = 'Panel1'
+  object PnlFrame: TPanel
+    Left = 20
+    Height = 984
+    Top = 20
+    Width = 1240
+    Align = alClient
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 20
+    Caption = 'PnlFrame'
+    ClientHeight = 984
+    ClientWidth = 1240
     TabOrder = 0
-    OnClick = Panel1Click
-  end
-  object Panel2: TPanel
-    Left = 0
-    Height = 160
-    Top = 864
-    Width = 1280
-    Align = alBottom
-    ClientHeight = 160
-    ClientWidth = 1280
-    TabOrder = 1
-    object SpeedButton1: TSpeedButton
-      Left = 1039
-      Height = 158
-      Top = 1
-      Width = 240
-      Align = alRight
+    object PnlBottomStatus: TPanel
+      Left = 1
+      Height = 80
+      Top = 903
+      Width = 1238
+      Align = alBottom
+      ClientHeight = 80
+      ClientWidth = 1238
+      TabOrder = 0
+      object BtnWyloguj: TSpeedButton
+        Left = 997
+        Height = 78
+        Top = 1
+        Width = 240
+        Align = alRight
+        Caption = 'Wyloguj'
+        Font.Height = -27
+        OnClick = BtnWylogujClick
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 21
+        Height = 38
+        Top = 21
+        Width = 956
+        Align = alClient
+        AutoSize = False
+        BorderSpacing.Around = 20
+        Caption = 'Zalogowano jako: '
+        Font.Height = -27
+        Layout = tlCenter
+        ParentBidiMode = False
+        ParentColor = False
+        ParentFont = False
+      end
     end
-    object Label1: TLabel
-      Left = 41
-      Height = 78
-      Top = 41
-      Width = 958
+    object PnlMain: TPanel
+      Left = 1
+      Height = 902
+      Top = 1
+      Width = 1238
       Align = alClient
-      AutoSize = False
-      BorderSpacing.Around = 40
-      Caption = 'Zalogowano jako: '
-      ParentBidiMode = False
+      ClientHeight = 902
+      ClientWidth = 1238
+      TabOrder = 1
+      object PnlLeft: TPanel
+        Left = 1
+        Height = 900
+        Top = 1
+        Width = 530
+        Align = alLeft
+        AutoSize = True
+        ClientHeight = 900
+        ClientWidth = 530
+        TabOrder = 1
+        object PnlNames: TPanel
+          Left = 1
+          Height = 398
+          Top = 1
+          Width = 128
+          Align = alLeft
+          AutoSize = True
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 10
+          ChildSizing.HorizontalSpacing = 10
+          ChildSizing.VerticalSpacing = 10
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 398
+          ClientWidth = 128
+          TabOrder = 1
+          object Label2: TLabel
+            Left = 10
+            Height = 23
+            Top = 10
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Nota:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label3: TLabel
+            Left = 10
+            Height = 23
+            Top = 43
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Odbiorca:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label4: TLabel
+            Left = 10
+            Height = 23
+            Top = 76
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Samochód:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label5: TLabel
+            Left = 10
+            Height = 23
+            Top = 109
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Ilość noty:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label6: TLabel
+            Left = 10
+            Height = 23
+            Top = 142
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Nr ubojowy:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label7: TLabel
+            Left = 10
+            Height = 23
+            Top = 175
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Data uboju:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label8: TLabel
+            Left = 10
+            Height = 23
+            Top = 208
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Indeks:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label9: TLabel
+            Left = 10
+            Height = 23
+            Top = 241
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Towar:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label10: TLabel
+            Left = 10
+            Height = 23
+            Top = 274
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Ilość poz.:'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object PnlValues: TPanel
+          Left = 129
+          Height = 398
+          Top = 1
+          Width = 400
+          Align = alLeft
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 10
+          ChildSizing.HorizontalSpacing = 10
+          ChildSizing.VerticalSpacing = 10
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 398
+          ClientWidth = 400
+          TabOrder = 0
+          object LblNumerNoty: TLabel
+            Left = 10
+            Height = 23
+            Top = 10
+            Width = 380
+            Caption = 'LblNumerNoty'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblOdbiorca: TLabel
+            Left = 10
+            Height = 23
+            Top = 43
+            Width = 380
+            Caption = 'LblOdbiorca'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblSamochod: TLabel
+            Left = 10
+            Height = 23
+            Top = 76
+            Width = 380
+            Caption = 'LblSamochod'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblIloscNoty: TLabel
+            Left = 10
+            Height = 23
+            Top = 109
+            Width = 380
+            Caption = 'LblIloscNoty'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblNumerUbojowy: TLabel
+            Left = 10
+            Height = 23
+            Top = 142
+            Width = 380
+            Caption = 'LblNumerUbojowy'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblDataUboju: TLabel
+            Left = 10
+            Height = 23
+            Top = 175
+            Width = 380
+            Caption = 'LblDataUboju'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblIndeks: TLabel
+            Left = 10
+            Height = 23
+            Top = 208
+            Width = 380
+            Caption = 'LblIndeks'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblTowar: TLabel
+            Left = 10
+            Height = 23
+            Top = 241
+            Width = 380
+            Caption = 'LblTowar'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblIloscPoz: TLabel
+            Left = 10
+            Height = 23
+            Top = 274
+            Width = 380
+            Caption = 'LblIloscPoz'
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object PnlDaneButtons: TPanel
+          Left = 1
+          Height = 500
+          Top = 399
+          Width = 528
+          Align = alBottom
+          TabOrder = 2
+        end
+      end
+      object PnlRight: TPanel
+        Left = 531
+        Height = 900
+        Top = 1
+        Width = 706
+        Align = alClient
+        ClientHeight = 900
+        ClientWidth = 706
+        TabOrder = 0
+        object PnlWazenia: TPanel
+          Left = 1
+          Height = 848
+          Top = 1
+          Width = 704
+          Align = alClient
+          TabOrder = 0
+        end
+        object PnlWazeniaButtons: TPanel
+          Left = 1
+          Height = 50
+          Top = 849
+          Width = 704
+          Align = alBottom
+          ClientHeight = 50
+          ClientWidth = 704
+          TabOrder = 1
+          object SpeedButton2: TSpeedButton
+            Left = 275
+            Height = 22
+            Top = 26
+            Width = 23
+            Caption = 'Storno'
+          end
+          object SpeedButton3: TSpeedButton
+            Left = 407
+            Height = 22
+            Top = 36
+            Width = 23
+            Caption = 'Drukuj ponownie'
+          end
+        end
+      end
+    end
+    object PnlClock: TPanel
+      AnchorSideTop.Control = PnlMain
+      AnchorSideRight.Control = PnlFrame
+      AnchorSideRight.Side = asrBottom
+      Left = 1069
+      Height = 50
+      Top = 1
+      Width = 170
+      Anchors = [akTop, akLeft, akRight]
+      ClientHeight = 50
+      ClientWidth = 170
+      Color = 3909887
       ParentColor = False
+      TabOrder = 2
+      object RxClock1: TRxClock
+        Left = 1
+        Height = 48
+        Top = 1
+        Width = 168
+        Align = alClient
+      end
+    end
+    object PnlZeskanuj: TPanel
+      Left = 320
+      Height = 240
+      Top = 320
+      Width = 640
+      Caption = 'Zeskanuj notę aby rozpocząć pracę...'
+      Font.Height = -27
       ParentFont = False
+      TabOrder = 3
+    end
+  end
+  object ZDaneNoty: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT NTN_NAZWA1 FROM NOTY_NAGLOWKI'
+      'WHERE NTN_NOTA = '':numernoty'''
+    )
+    Params = <    
+      item
+        DataType = ftString
+        Name = 'numernoty'
+        ParamType = ptInput
+      end>
+    Left = 64
+    Top = 848
+    ParamData = <    
+      item
+        DataType = ftString
+        Name = 'numernoty'
+        ParamType = ptInput
+      end>
+    object ZDaneNotyNTN_NAZWA1: TStringField
+      FieldKind = fkData
+      FieldName = 'NTN_NAZWA1'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
     end
   end
 end

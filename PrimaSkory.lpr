@@ -7,8 +7,8 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, Forms, zcomponent, uLogowanie, uConfig, udebug, uversion, uCommons,
-  LCLType
+  Interfaces, Forms, zcomponent, uLogowanie, uConfig, uversion,
+  uCommons, rxnew, LCLType, datetimectrls, uDebug
   { you can add units after this };
 
 {$R *.res}

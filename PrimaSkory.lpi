@@ -70,21 +70,39 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="10">
       <Item1>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="CEF4Delphi_Lazarus"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="Multivac_runtime"/>
       </Item2>
       <Item3>
-        <PackageName Value="multivac"/>
+        <PackageName Value="GxLabelEditor"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item4>
+      <Item5>
+        <PackageName Value="rxnew"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="industrial"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="zcomponent"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="FCL"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="multivac"/>
+      </Item9>
+      <Item10>
+        <PackageName Value="LCL"/>
+      </Item10>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="6">
       <Unit0>
         <Filename Value="PrimaSkory.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -95,38 +113,34 @@
         <UnitName Value="uConfig"/>
       </Unit1>
       <Unit2>
-        <Filename Value="udebug.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uDebug"/>
-      </Unit2>
-      <Unit3>
         <Filename Value="uversion.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVersion"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="ucommons.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Commons"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uCommons"/>
-      </Unit4>
-      <Unit5>
+      </Unit3>
+      <Unit4>
         <Filename Value="ulogowanie.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormLogowanie"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLogowanie"/>
-      </Unit5>
-      <Unit6>
+      </Unit4>
+      <Unit5>
         <Filename Value="uekranglowny.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormEkranGlowny"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEkranGlowny"/>
-      </Unit6>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

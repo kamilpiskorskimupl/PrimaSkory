@@ -11,6 +11,7 @@ object Commons: TCommons
     ClientCodepage = 'UTF8'
     Properties.Strings = (
       'codepage=UTF8'
+      'AutoEncodeStrings='
     )
     Port = 0
     Database = 'WYSYLKA_SKOR'
