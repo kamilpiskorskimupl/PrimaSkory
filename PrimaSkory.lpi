@@ -84,7 +84,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="PrimaSkory.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -120,6 +120,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLogowanie"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="uekranglowny.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEkranGlowny"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uEkranGlowny"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

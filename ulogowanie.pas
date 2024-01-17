@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  uMVRxDBGrid, ZDataset, DBGrids;
+  uMVRxDBGrid, ZDataset, DBGrids, Buttons, uEkranGlowny;
 
 type
 
@@ -23,17 +23,20 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
+    BtnZaloguj: TSpeedButton;
     ZLiteraList: TZReadOnlyQuery;
     ZLoginList: TZReadOnlyQuery;
     ZLiteraListOPR_LITERA: TStringField;
-    ZLoginListOPR_IMIE: TStringField;
-    ZLoginListOPR_NAZWISKO: TStringField;
+    ZLoginListOPR_ID: TLongintField;
+    ZLoginListOPR_NAZWA: TStringField;
+    procedure BtnZalogujClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure RxLiteraListCellClick(Column: TColumn);
-    procedure ZLiteraListOPR_LITERAChange(Sender: TField);
+    procedure RxLoginListDblClick(Sender: TObject);
   private
-
+    OprId: Integer;
+    OprNazwa: String;
   public
 
   end;
@@ -52,6 +55,16 @@ begin
   ZLiteraList.Open;
 end;
 
+procedure TFormLogowanie.BtnZalogujClick(Sender: TObject);
+begin
+  OprId := ZLoginListOPR_ID.AsInteger;
+  if OprId<1 then ShowMessage('Proszę wybrać operatora!')
+  else begin
+    OprNazwa := ZLoginListOPR_NAZWA.AsString;
+    TFormEkranGlowny.Execute(OprId, OprNazwa);
+  end;
+end;
+
 procedure TFormLogowanie.FormDestroy(Sender: TObject);
 begin
   ZLiteraList.Close;
@@ -67,9 +80,11 @@ begin
  ZLoginList.Refresh;
 end;
 
-procedure TFormLogowanie.ZLiteraListOPR_LITERAChange(Sender: TField);
+procedure TFormLogowanie.RxLoginListDblClick(Sender: TObject);
 begin
-
+  OprId := ZLoginListOPR_ID.AsInteger;
+  OprNazwa := ZLoginListOPR_NAZWA.AsString;
+  TFormEkranGlowny.Execute(OprId, OprNazwa)
 end;
 
 end.
