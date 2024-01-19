@@ -1,11 +1,12 @@
 object FormEkranGlowny: TFormEkranGlowny
-  Left = 647
+  Left = 645
   Height = 1024
   Top = 232
   Width = 1280
   Caption = 'Prima Skóry'
   ClientHeight = 1024
   ClientWidth = 1280
+  KeyPreview = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
@@ -16,7 +17,6 @@ object FormEkranGlowny: TFormEkranGlowny
     Height = 984
     Top = 20
     Width = 1240
-    Align = alClient
     BorderSpacing.Left = 20
     BorderSpacing.Top = 20
     BorderSpacing.Right = 20
@@ -310,7 +310,74 @@ object FormEkranGlowny: TFormEkranGlowny
           Top = 399
           Width = 528
           Align = alBottom
+          ClientHeight = 500
+          ClientWidth = 528
           TabOrder = 2
+          object GroupBox1: TGroupBox
+            Left = 1
+            Height = 115
+            Top = 116
+            Width = 526
+            Align = alTop
+            Caption = 'Ważenie'
+            ClientHeight = 80
+            ClientWidth = 522
+            Font.Height = -27
+            ParentFont = False
+            TabOrder = 0
+            object BtnWazenie: TSpeedButton
+              Left = 0
+              Height = 80
+              Top = 0
+              Width = 250
+              Align = alLeft
+              Caption = 'Zważ ręcznie'
+            end
+            object CbWazenieAutomatyczne: TCheckBox
+              Left = 272
+              Height = 80
+              Top = 0
+              Width = 250
+              Align = alRight
+              AutoSize = False
+              Caption = 'Automatyczne'
+              TabOrder = 0
+            end
+          end
+          object RadioGroup1: TGroupBox
+            Left = 1
+            Height = 115
+            Top = 1
+            Width = 526
+            Align = alTop
+            Caption = 'Rodzaj skóry'
+            ClientHeight = 80
+            ClientWidth = 522
+            Font.Height = -27
+            ParentFont = False
+            TabOrder = 1
+            object BtnSkoraZwykla: TButton
+              Left = 0
+              Height = 80
+              Top = 0
+              Width = 250
+              Align = alLeft
+              Caption = 'Zwykła'
+              Color = clBtnShadow
+              OnClick = BtnSkoraZwyklaClick
+              TabOrder = 0
+            end
+            object BtnSkoraKoszerna: TButton
+              Left = 272
+              Height = 80
+              Top = 0
+              Width = 250
+              Align = alRight
+              Caption = 'Super koszerna'
+              OnClick = BtnSkoraKoszernaClick
+              TabOrder = 1
+            end
+          end
         end
       end
       object PnlRight: TPanel
@@ -324,34 +391,171 @@ object FormEkranGlowny: TFormEkranGlowny
         TabOrder = 0
         object PnlWazenia: TPanel
           Left = 1
-          Height = 848
+          Height = 818
           Top = 1
           Width = 704
           Align = alClient
+          ClientHeight = 818
+          ClientWidth = 704
           TabOrder = 0
+          object GbPozycjeNoty: TGroupBox
+            Left = 1
+            Height = 816
+            Top = 1
+            Width = 702
+            Align = alClient
+            Caption = 'Pozycje noty:'
+            ClientHeight = 781
+            ClientWidth = 698
+            Font.Height = -27
+            ParentFont = False
+            TabOrder = 0
+            object RxPozycjeNoty: TMVRxDBGrid
+              Left = 0
+              Height = 661
+              Top = 60
+              Width = 698
+              TitleButtons = False
+              AutoSort = True
+              KeyStrokes = <              
+                item
+                  Command = rxgcShowFindDlg
+                  ShortCut = 16454
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowColumnsDlg
+                  ShortCut = 16471
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowFilterDlg
+                  ShortCut = 16468
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowSortDlg
+                  ShortCut = 16467
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowQuickFilter
+                  ShortCut = 16465
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcHideQuickFilter
+                  ShortCut = 16456
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcSelectAll
+                  ShortCut = 16449
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcDeSelectAll
+                  ShortCut = 16429
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcInvertSelection
+                  ShortCut = 16426
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcOptimizeColumnsWidth
+                  ShortCut = 16427
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcCopyCellValue
+                  ShortCut = 16451
+                  Enabled = True
+                end>
+              OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+              Align = alClient
+              Color = clWindow
+              DrawFullLine = False
+              FocusColor = clRed
+              SelectedColor = clHighlight
+              GridLineStyle = psSolid
+              DefaultRowHeight = 60
+              Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+              ParentColor = False
+              TabOrder = 0
+              OnlyFilteredLookup = False
+              OverrideEmptyText = False
+              PreciseLookupSort = False
+            end
+            object BtnPgUp: TSpeedButton
+              Left = 0
+              Height = 60
+              Top = 0
+              Width = 698
+              Align = alTop
+              Caption = '↑'
+              Enabled = False
+              Font.Height = -40
+              OnClick = BtnPgUpClick
+              ParentFont = False
+            end
+            object BtnPgDown: TSpeedButton
+              Left = 0
+              Height = 60
+              Top = 721
+              Width = 698
+              Align = alBottom
+              Caption = '↓'
+              Enabled = False
+              Font.Height = -40
+              OnClick = BtnPgDownClick
+              ParentFont = False
+            end
+          end
         end
         object PnlWazeniaButtons: TPanel
           Left = 1
-          Height = 50
-          Top = 849
+          Height = 80
+          Top = 819
           Width = 704
           Align = alBottom
-          ClientHeight = 50
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.Layout = cclTopToBottomThenLeftToRight
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 80
           ClientWidth = 704
           TabOrder = 1
-          object SpeedButton2: TSpeedButton
-            Left = 275
-            Height = 22
-            Top = 26
-            Width = 23
-            Caption = 'Storno'
+          object BtnDrukujPonownie: TSpeedButton
+            Left = 233
+            Height = 78
+            Top = 1
+            Width = 235
+            Align = alRight
+            Caption = 'Drukuj Ponownie'
+            Font.Height = -27
+            ParentFont = False
           end
-          object SpeedButton3: TSpeedButton
-            Left = 407
-            Height = 22
-            Top = 36
-            Width = 23
-            Caption = 'Drukuj ponownie'
+          object BtnZakonczNote: TSpeedButton
+            Left = 468
+            Height = 78
+            Top = 1
+            Width = 235
+            Align = alRight
+            Caption = 'Zakończ notę'
+            Font.Height = -27
+            ParentFont = False
+          end
+          object BtnStorno: TSpeedButton
+            Left = -2
+            Height = 78
+            Top = 1
+            Width = 235
+            Align = alRight
+            Caption = 'Storno'
+            Font.Height = -27
+            ParentFont = False
           end
         end
       end
@@ -361,27 +565,29 @@ object FormEkranGlowny: TFormEkranGlowny
       AnchorSideRight.Control = PnlFrame
       AnchorSideRight.Side = asrBottom
       Left = 1069
-      Height = 50
+      Height = 36
       Top = 1
       Width = 170
       Anchors = [akTop, akLeft, akRight]
-      ClientHeight = 50
+      ClientHeight = 36
       ClientWidth = 170
       Color = 3909887
       ParentColor = False
       TabOrder = 2
       object RxClock1: TRxClock
         Left = 1
-        Height = 48
+        Height = 34
         Top = 1
         Width = 168
         Align = alClient
+        Font.Height = -27
+        ParentFont = False
       end
     end
     object PnlZeskanuj: TPanel
-      Left = 320
+      Left = 552
       Height = 240
-      Top = 320
+      Top = 280
       Width = 640
       Caption = 'Zeskanuj notę aby rozpocząć pracę...'
       Font.Height = -27
@@ -393,7 +599,7 @@ object FormEkranGlowny: TFormEkranGlowny
     Connection = Commons.DbWysylka
     SQL.Strings = (
       'SELECT NTN_NAZWA1 FROM NOTY_NAGLOWKI'
-      'WHERE NTN_NOTA = '':numernoty'''
+      'WHERE NTN_NOTA = :numernoty'
     )
     Params = <    
       item
@@ -401,8 +607,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'numernoty'
         ParamType = ptInput
       end>
-    Left = 64
-    Top = 848
+    Left = 144
+    Top = 856
     ParamData = <    
       item
         DataType = ftString
@@ -419,5 +625,119 @@ object FormEkranGlowny: TFormEkranGlowny
       Required = False
       Size = 50
     end
+  end
+  object ZScanNote: TZQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC SCAN_NOTE :deviceid, :code'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end>
+    Left = 48
+    Top = 856
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZStanNoty: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT [NOT_INDEKS]'
+      '        ,[NOT_INDNAZWA] AS NOT_INDNAZWA'
+      '        ,ISNULL(SUM(NOT_ZREALIZOWANE),0) AS NOT_ZREALIZOWANE'
+      '        ,NOT_ZAMOWIONE'
+      #9#9',''OK'' AS RESULT'
+      #9#9'FROM [STAN_NOTY] WITH(NOLOCK)'
+      #9#9'WHERE [NOT_NOTA] = :code'
+      #9#9'GROUP BY NOT_INDEKS, NOT_INDNAZWA, NOT_ZAMOWIONE, NOT_STAN_MAG, NOT_POZYCJA;'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end>
+    Left = 240
+    Top = 856
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end>
+    object ZStanNotyNOT_INDNAZWA: TStringField
+      FieldKind = fkData
+      FieldName = 'NOT_INDNAZWA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZStanNotyNOT_ZAMOWIONE: TStringField
+      FieldKind = fkData
+      FieldName = 'NOT_ZAMOWIONE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZScanCode: TZQuery
+    SQL.Strings = (
+      'EXEC SCAN_CODE :deviceid, :code, :masa'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'masa'
+        ParamType = ptUnknown
+      end>
+    Left = 328
+    Top = 856
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'masa'
+        ParamType = ptUnknown
+      end>
   end
 end

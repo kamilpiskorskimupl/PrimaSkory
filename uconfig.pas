@@ -28,15 +28,7 @@ type
     bChangeAction : Boolean;
 
     // Modules
-    ModZlecenia : Boolean;
-    ModDaneChwilowe : Boolean;
-    ModUrzadzenia : Boolean;
-    ModPlanProdukcji : Boolean;
-    ModScalone : Boolean;
-    ModZleceniaAutomatyczne : Boolean;
-    ModObieranie : Boolean;
-    ModOperacje : Boolean;
-    ModDoduk : Boolean;
+    ModDrukowanie : Boolean;
 
     // Debug
     bLocalEcho : Boolean;
@@ -134,15 +126,7 @@ begin
   sLauncher_Path := 'desktoplauncher.exe';
   sLauncher_Ini_Path := 'desktop-launcher.ini';
 
-  ModZlecenia := true;
-  ModDaneChwilowe := true;
-  ModUrzadzenia := true;
-  ModPlanProdukcji := true;
-  ModScalone := true;
-  ModZleceniaAutomatyczne := true;
-  ModObieranie := true;
-  ModOperacje := true;
-  ModDoduk := true;
+  ModDrukowanie := true;
   bChangeAction := false;
 
   bLocalEcho := false;
@@ -185,15 +169,7 @@ begin
   sSelectedLanguage := f.ReadString('language', 'selected_language', sSelectedLanguage);
   sLangCode := f.ReadString('language','lang_code',sLangCode);
 
-  ModZlecenia := f.ReadBool('modules', 'mod_zlecenia', ModZlecenia);
-  ModDaneChwilowe := f.ReadBool('modules', 'mod_dane_chwilowe', ModDaneChwilowe);
-  ModUrzadzenia := f.ReadBool('modules', 'mod_urzadzenia', ModUrzadzenia);
-  ModPlanProdukcji := f.ReadBool('modules', 'mod_plan_produkcji', ModPlanProdukcji);
-  ModScalone := f.ReadBool('modules', 'mod_scalone', ModScalone);
-  ModZleceniaAutomatyczne := f.ReadBool('modules', 'mod_zlecenia_automatyczne', ModZleceniaAutomatyczne);
-  ModObieranie := f.ReadBool('modules', 'mod_obieranie', ModObieranie);
-  ModOperacje := f.ReadBool('modules', 'mod_operacje', ModOperacje);
-  ModDoduk := f.ReadBool('modules', 'mod_dodruk', ModDoduk);
+  ModDrukowanie := f.ReadBool('modules', 'mod_drukowanie', ModDrukowanie);
 
   sDB_Server   := f.ReadString('database','server'   ,sDB_Server);
   iDB_Port     := f.ReadInteger('database', 'port', iDB_Port);
@@ -238,15 +214,7 @@ begin
   f.WriteString('language', 'selected_language', sSelectedLanguage);
   f.WriteString('language','lang_code',sLangCode);
 
-  f.WriteBool('modules', 'mod_zlecenia', ModZlecenia);
-  f.WriteBool('modules', 'mod_dane_chwilowe', ModDaneChwilowe);
-  f.WriteBool('modules', 'mod_urzadzenia', ModUrzadzenia);
-  f.WriteBool('modules', 'mod_plan_produkcji', ModPlanProdukcji);
-  f.WriteBool('modules', 'mod_scalone', ModScalone);
-  f.WriteBool('modules', 'mod_zlecenia_automatyczne', ModZleceniaAutomatyczne);
-  f.WriteBool('modules', 'mod_obieranie', ModObieranie);
-  f.WriteBool('modules', 'mod_operacje', ModOperacje);
-  f.WriteBool('modules', 'mod_dodruk', ModDoduk);
+  f.WriteBool('modules', 'mod_drukowanie', ModDrukowanie);
 
   f.WriteString('database','server'  , sDB_Server);
   f.WriteInteger('database', 'port', iDB_Port);

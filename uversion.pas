@@ -23,7 +23,7 @@ function GetAppCaption : String;
 const
   AppVersion : TAppVersion =
   ( sProduct      : 'Prima Skóry';
-    sVersion      : '1.0.0';
+    sVersion      : '0.5.0'; //Major.Minor.Patch
     sFileVersion  : '1';
     sDate         : {$I %DATE%};
     sManufacturer : 'Multivac sp. z o.o.';

@@ -17,8 +17,8 @@ type
     BtnRightPgUp: TSpeedButton;
     DSLiteraList: TDataSource;
     DSLoginList: TDataSource;
-    GroupBox1: TGroupBox;
-    GroupBox2: TGroupBox;
+    GbLeft: TGroupBox;
+    GbRight: TGroupBox;
     RxLiteraList: TMVRxDBGrid;
     RxLoginList: TMVRxDBGrid;
     PnlFrame: TPanel;
