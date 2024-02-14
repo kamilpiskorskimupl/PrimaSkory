@@ -104,6 +104,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Width = 108
             Alignment = taRightJustify
             Caption = 'Nota:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -115,6 +116,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Width = 108
             Alignment = taRightJustify
             Caption = 'Odbiorca:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -126,6 +128,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Width = 108
             Alignment = taRightJustify
             Caption = 'Samochód:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -137,17 +140,30 @@ object FormEkranGlowny: TFormEkranGlowny
             Width = 108
             Alignment = taRightJustify
             Caption = 'Ilość noty:'
+            Constraints.MinHeight = 23
             Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblSpacer1: TLabel
+            Left = 10
+            Height = 31
+            Top = 142
+            Width = 108
+            Caption = ' '
+            Constraints.MinHeight = 23
+            Font.Height = -27
             ParentColor = False
             ParentFont = False
           end
           object Label6: TLabel
             Left = 10
             Height = 23
-            Top = 142
+            Top = 183
             Width = 108
             Alignment = taRightJustify
             Caption = 'Nr ubojowy:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -155,10 +171,11 @@ object FormEkranGlowny: TFormEkranGlowny
           object Label7: TLabel
             Left = 10
             Height = 23
-            Top = 175
+            Top = 216
             Width = 108
             Alignment = taRightJustify
             Caption = 'Data uboju:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -166,10 +183,11 @@ object FormEkranGlowny: TFormEkranGlowny
           object Label8: TLabel
             Left = 10
             Height = 23
-            Top = 208
+            Top = 249
             Width = 108
             Alignment = taRightJustify
             Caption = 'Indeks:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -177,10 +195,11 @@ object FormEkranGlowny: TFormEkranGlowny
           object Label9: TLabel
             Left = 10
             Height = 23
-            Top = 241
+            Top = 282
             Width = 108
             Alignment = taRightJustify
             Caption = 'Towar:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -188,10 +207,11 @@ object FormEkranGlowny: TFormEkranGlowny
           object Label10: TLabel
             Left = 10
             Height = 23
-            Top = 274
+            Top = 315
             Width = 108
             Alignment = taRightJustify
             Caption = 'Ilość poz.:'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -219,6 +239,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Top = 10
             Width = 380
             Caption = 'LblNumerNoty'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -229,6 +250,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Top = 43
             Width = 380
             Caption = 'LblOdbiorca'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -239,6 +261,7 @@ object FormEkranGlowny: TFormEkranGlowny
             Top = 76
             Width = 380
             Caption = 'LblSamochod'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -249,16 +272,29 @@ object FormEkranGlowny: TFormEkranGlowny
             Top = 109
             Width = 380
             Caption = 'LblIloscNoty'
+            Constraints.MinHeight = 23
             Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object LblSpacer2: TLabel
+            Left = 10
+            Height = 31
+            Top = 142
+            Width = 380
+            Caption = ' '
+            Constraints.MinHeight = 23
+            Font.Height = -27
             ParentColor = False
             ParentFont = False
           end
           object LblNumerUbojowy: TLabel
             Left = 10
             Height = 23
-            Top = 142
+            Top = 183
             Width = 380
             Caption = 'LblNumerUbojowy'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -266,9 +302,10 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblDataUboju: TLabel
             Left = 10
             Height = 23
-            Top = 175
+            Top = 216
             Width = 380
             Caption = 'LblDataUboju'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -276,9 +313,10 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblIndeks: TLabel
             Left = 10
             Height = 23
-            Top = 208
+            Top = 249
             Width = 380
             Caption = 'LblIndeks'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -286,9 +324,10 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblTowar: TLabel
             Left = 10
             Height = 23
-            Top = 241
+            Top = 282
             Width = 380
             Caption = 'LblTowar'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -296,9 +335,10 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblIloscPoz: TLabel
             Left = 10
             Height = 23
-            Top = 274
+            Top = 315
             Width = 380
             Caption = 'LblIloscPoz'
+            Constraints.MinHeight = 23
             Font.Height = -20
             ParentColor = False
             ParentFont = False
@@ -480,15 +520,21 @@ object FormEkranGlowny: TFormEkranGlowny
               FocusColor = clRed
               SelectedColor = clHighlight
               GridLineStyle = psSolid
-              DefaultRowHeight = 60
+              DataSource = DSPozycjeNoty
+              DefaultRowHeight = 40
+              DefaultColWidth = 64
+              Font.Height = -16
               Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
               ParentColor = False
+              ParentFont = False
+              ReadOnly = True
+              Scrollbars = ssNone
               TabOrder = 0
               OnlyFilteredLookup = False
               OverrideEmptyText = False
               PreciseLookupSort = False
             end
-            object BtnPgUp: TSpeedButton
+            object BtnPgUpPozycje: TSpeedButton
               Left = 0
               Height = 60
               Top = 0
@@ -497,10 +543,10 @@ object FormEkranGlowny: TFormEkranGlowny
               Caption = '↑'
               Enabled = False
               Font.Height = -40
-              OnClick = BtnPgUpClick
+              OnClick = BtnPgUpPozycjeClick
               ParentFont = False
             end
-            object BtnPgDown: TSpeedButton
+            object BtnPgDownPozycje: TSpeedButton
               Left = 0
               Height = 60
               Top = 721
@@ -509,7 +555,126 @@ object FormEkranGlowny: TFormEkranGlowny
               Caption = '↓'
               Enabled = False
               Font.Height = -40
-              OnClick = BtnPgDownClick
+              OnClick = BtnPgDownPozycjeClick
+              ParentFont = False
+            end
+          end
+          object GbListaWazen: TGroupBox
+            Left = 1
+            Height = 816
+            Top = 1
+            Width = 702
+            Align = alClient
+            Caption = 'Lista Ważeń'
+            ClientHeight = 781
+            ClientWidth = 698
+            Font.Height = -27
+            ParentFont = False
+            TabOrder = 1
+            Visible = False
+            object RxListaWazen: TMVRxDBGrid
+              Left = 0
+              Height = 661
+              Top = 60
+              Width = 698
+              TitleButtons = False
+              AutoSort = True
+              KeyStrokes = <              
+                item
+                  Command = rxgcShowFindDlg
+                  ShortCut = 16454
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowColumnsDlg
+                  ShortCut = 16471
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowFilterDlg
+                  ShortCut = 16468
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowSortDlg
+                  ShortCut = 16467
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcShowQuickFilter
+                  ShortCut = 16465
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcHideQuickFilter
+                  ShortCut = 16456
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcSelectAll
+                  ShortCut = 16449
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcDeSelectAll
+                  ShortCut = 16429
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcOptimizeColumnsWidth
+                  ShortCut = 16427
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcInvertSelection
+                  ShortCut = 16426
+                  Enabled = True
+                end              
+                item
+                  Command = rxgcCopyCellValue
+                  ShortCut = 16451
+                  Enabled = True
+                end>
+              OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+              Align = alClient
+              Color = clWindow
+              DrawFullLine = False
+              FocusColor = clRed
+              SelectedColor = clHighlight
+              GridLineStyle = psSolid
+              DataSource = DSListaWazen
+              DefaultRowHeight = 60
+              Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+              ParentColor = False
+              ReadOnly = True
+              Scrollbars = ssNone
+              TabOrder = 0
+              OnlyFilteredLookup = False
+              OverrideEmptyText = False
+              PreciseLookupSort = False
+            end
+            object BtnPgUpLista: TSpeedButton
+              Left = 0
+              Height = 60
+              Top = 0
+              Width = 698
+              Align = alTop
+              Caption = '↑'
+              Enabled = False
+              Font.Height = -40
+              OnClick = BtnPgUpPozycjeClick
+              ParentFont = False
+            end
+            object BtnPgDownLista: TSpeedButton
+              Left = 0
+              Height = 60
+              Top = 721
+              Width = 698
+              Align = alBottom
+              Caption = '↓'
+              Enabled = False
+              Font.Height = -40
+              OnClick = BtnPgDownPozycjeClick
               ParentFont = False
             end
           end
@@ -527,14 +692,15 @@ object FormEkranGlowny: TFormEkranGlowny
           ClientHeight = 80
           ClientWidth = 704
           TabOrder = 1
-          object BtnDrukujPonownie: TSpeedButton
-            Left = 233
+          object BtnZmianaWidoku: TSpeedButton
+            Left = -2
             Height = 78
             Top = 1
             Width = 235
             Align = alRight
-            Caption = 'Drukuj Ponownie'
+            Caption = 'Lista ważeń'
             Font.Height = -27
+            OnClick = BtnZmianaWidokuClick
             ParentFont = False
           end
           object BtnZakonczNote: TSpeedButton
@@ -545,16 +711,18 @@ object FormEkranGlowny: TFormEkranGlowny
             Align = alRight
             Caption = 'Zakończ notę'
             Font.Height = -27
+            OnClick = BtnZakonczNoteClick
             ParentFont = False
           end
           object BtnStorno: TSpeedButton
-            Left = -2
+            Left = 233
             Height = 78
             Top = 1
             Width = 235
             Align = alRight
-            Caption = 'Storno'
+            Caption = 'Wykonaj storno'
             Font.Height = -27
+            OnClick = BtnStornoClick
             ParentFont = False
           end
         end
@@ -595,37 +763,6 @@ object FormEkranGlowny: TFormEkranGlowny
       TabOrder = 3
     end
   end
-  object ZDaneNoty: TZReadOnlyQuery
-    Connection = Commons.DbWysylka
-    SQL.Strings = (
-      'SELECT NTN_NAZWA1 FROM NOTY_NAGLOWKI'
-      'WHERE NTN_NOTA = :numernoty'
-    )
-    Params = <    
-      item
-        DataType = ftString
-        Name = 'numernoty'
-        ParamType = ptInput
-      end>
-    Left = 144
-    Top = 856
-    ParamData = <    
-      item
-        DataType = ftString
-        Name = 'numernoty'
-        ParamType = ptInput
-      end>
-    object ZDaneNotyNTN_NAZWA1: TStringField
-      FieldKind = fkData
-      FieldName = 'NTN_NAZWA1'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 50
-    end
-  end
   object ZScanNote: TZQuery
     Connection = Commons.DbWysylka
     SQL.Strings = (
@@ -642,66 +779,22 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'code'
         ParamType = ptUnknown
       end>
-    Left = 48
-    Top = 856
+    Left = 56
+    Top = 672
     ParamData = <    
       item
         DataType = ftUnknown
         Name = 'deviceid'
         ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'code'
-        ParamType = ptUnknown
-      end>
-  end
-  object ZStanNoty: TZReadOnlyQuery
-    Connection = Commons.DbWysylka
-    SQL.Strings = (
-      'SELECT [NOT_INDEKS]'
-      '        ,[NOT_INDNAZWA] AS NOT_INDNAZWA'
-      '        ,ISNULL(SUM(NOT_ZREALIZOWANE),0) AS NOT_ZREALIZOWANE'
-      '        ,NOT_ZAMOWIONE'
-      #9#9',''OK'' AS RESULT'
-      #9#9'FROM [STAN_NOTY] WITH(NOLOCK)'
-      #9#9'WHERE [NOT_NOTA] = :code'
-      #9#9'GROUP BY NOT_INDEKS, NOT_INDNAZWA, NOT_ZAMOWIONE, NOT_STAN_MAG, NOT_POZYCJA;'
-    )
-    Params = <    
-      item
-        DataType = ftUnknown
-        Name = 'code'
-        ParamType = ptUnknown
-      end>
-    Left = 240
-    Top = 856
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'code'
-        ParamType = ptUnknown
-      end>
-    object ZStanNotyNOT_INDNAZWA: TStringField
-      FieldKind = fkData
-      FieldName = 'NOT_INDNAZWA'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
     end
-    object ZStanNotyNOT_ZAMOWIONE: TStringField
-      FieldKind = fkData
-      FieldName = 'NOT_ZAMOWIONE'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
+      item
+        DataType = ftUnknown
+        Name = 'code'
+        ParamType = ptUnknown
+      end>
   end
   object ZScanCode: TZQuery
+    Connection = Commons.DbWysylka
     SQL.Strings = (
       'EXEC SCAN_CODE :deviceid, :code, :masa'
     )
@@ -721,8 +814,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'masa'
         ParamType = ptUnknown
       end>
-    Left = 328
-    Top = 856
+    Left = 192
+    Top = 768
     ParamData = <    
       item
         DataType = ftUnknown
@@ -739,5 +832,326 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'masa'
         ParamType = ptUnknown
       end>
+  end
+  object ZLoadSettings: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC LOAD_SETTINGS :deviceid'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 56
+    Top = 720
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZLoadTempData: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC LOAD_TEMP_DATA :deviceid, :oprid'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'oprid'
+        ParamType = ptUnknown
+      end>
+    Left = 56
+    Top = 768
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'oprid'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZLoadTempVal: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC LOAD_TEMP_VAL :deviceid'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 56
+    Top = 824
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    object ZLoadTempValID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZLoadTempValVALUE: TStringField
+      FieldKind = fkData
+      FieldName = 'VALUE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZPozycjeNoty: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC WIDOK_ZLECEN_2 :deviceid'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 600
+    Top = 720
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    object ZPozycjeNotyZLC_KOD_ASORTYMENTU: TStringField
+      FieldKind = fkData
+      FieldName = 'ZLC_KOD_ASORTYMENTU'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZPozycjeNotyZLC_NAZWA_ASORTYMENTU: TStringField
+      FieldKind = fkData
+      FieldName = 'ZLC_NAZWA_ASORTYMENTU'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+  end
+  object DSPozycjeNoty: TDataSource
+    DataSet = ZPozycjeNoty
+    Left = 600
+    Top = 656
+      end    
+  object ZPrintQuery: TZQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC [PRINT] :deviceid, :masa'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'masa'
+        ParamType = ptUnknown
+      end>
+    Left = 856
+    Top = 720
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'masa'
+        ParamType = ptUnknown
+      end>
+      end    
+  object ZRodzajSkory: TZQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC USTAW_RODZAJ_SKORY :deviceid, :rodzaj'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'rodzaj'
+        ParamType = ptUnknown
+      end>
+    Left = 192
+    Top = 672
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'rodzaj'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZResetTempVal: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC RESET_TEMP_VAL :deviceid'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 56
+    Top = 880
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    object ZLoadTempValID1: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZLoadTempValVALUE1: TStringField
+      FieldKind = fkData
+      FieldName = 'VALUE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZZakonczNoteTempData: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'DELETE FROM TEMP_DATA WITH(ROWLOCK) WHERE TD_DEVICE = :deviceid AND TD_DATA IN (''ZAMOWIENIE'', ''NR_KTH'', ''TARA'', ''PARTIA'')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 192
+    Top = 720
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSListaWazen: TDataSource
+    DataSet = ZListaWazen
+    Left = 728
+    Top = 656
+  end
+  object ZListaWazen: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT WAZ_ID,  WAZ_INDEKS, WAZ_MASA, WAZ_PARTIA, WAZ_KOD FROM WAZENIA'
+      'WHERE WAZ_NOTA = :nota'
+      'AND WAZ_ID_STORNA = -1'
+      'ORDER BY WAZ_DATA_WAZENIA DESC'
+    )
+    Params = <    
+      item
+        DataType = ftString
+        Name = 'nota'
+        ParamType = ptInput
+      end>
+    Left = 728
+    Top = 720
+    ParamData = <    
+      item
+        DataType = ftString
+        Name = 'nota'
+        ParamType = ptInput
+      end>
+    object ZWazeniaWAZ_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'WAZ_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object ZWazeniaWAZ_INDEKS: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WAZ_INDEKS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object ZWazeniaWAZ_MASA: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'WAZ_MASA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZWazeniaWAZ_PARTIA: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WAZ_PARTIA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
   end
 end
