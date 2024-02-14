@@ -5,7 +5,7 @@ unit uCommons;
 interface
 
 uses
-  Classes, SysUtils, DB, ZConnection, uconfig, LazUTF8, udebug;
+  Classes, SysUtils, DB, ZConnection, ZDataset, uconfig, LazUTF8, udebug;
 
 type
 
@@ -13,6 +13,7 @@ type
 
   TCommons = class(TDataModule)
     DbWysylka: TZConnection;
+    ZQueryANSI: TZQuery;
     procedure DataModuleCreate(Sender: TObject);
   end;
 

@@ -8,7 +8,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, Forms, zcomponent, uLogowanie, uConfig, uversion,
-  uCommons, rxnew, LCLType, datetimectrls, uDebug
+  uCommons, LCLType, uDebug, rxnew
   { you can add units after this };
 
 {$R *.res}
@@ -24,6 +24,7 @@ procedure RunApplication;
 begin
   _debug.loglx(L_INFO, 'PrimaSkory', 'RunApplication', 'Connect to database WYSYLKA.');
   Commons.DbWysylka.Connect;
+  Commons.ZQueryANSI.ExecSQL;
 
   FormLogowanie := TFormLogowanie.Create(Application);
   FormLogowanie.Show();

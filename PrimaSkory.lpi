@@ -70,37 +70,28 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="10">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="CEF4Delphi_Lazarus"/>
+        <PackageName Value="rxnew"/>
       </Item1>
       <Item2>
-        <PackageName Value="Multivac_runtime"/>
+        <PackageName Value="CEF4Delphi_Lazarus"/>
       </Item2>
       <Item3>
-        <PackageName Value="GxLabelEditor"/>
+        <PackageName Value="Multivac_runtime"/>
       </Item3>
       <Item4>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="zcomponent"/>
       </Item4>
       <Item5>
-        <PackageName Value="rxnew"/>
+        <PackageName Value="FCL"/>
       </Item5>
       <Item6>
-        <PackageName Value="industrial"/>
+        <PackageName Value="multivac"/>
       </Item6>
       <Item7>
-        <PackageName Value="zcomponent"/>
-      </Item7>
-      <Item8>
-        <PackageName Value="FCL"/>
-      </Item8>
-      <Item9>
-        <PackageName Value="multivac"/>
-      </Item9>
-      <Item10>
         <PackageName Value="LCL"/>
-      </Item10>
+      </Item7>
     </RequiredPackages>
     <Units Count="6">
       <Unit0>

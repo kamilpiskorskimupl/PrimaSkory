@@ -21,4 +21,14 @@ object Commons: TCommons
     Left = 64
     Top = 40
   end
+  object ZQueryANSI: TZQuery
+    Connection = DbWysylka
+    SQL.Strings = (
+      'SET ANSI_NULLS ON'
+      'SET ANSI_WARNINGS ON'
+    )
+    Params = <>
+    Left = 64
+    Top = 120
+  end
 end
