@@ -76,12 +76,17 @@ type
     BtnWazenie: TSpeedButton;
     RxListaWazen: TMVRxDBGrid;
     TbAkcje: TToolBar;
+    ZListaWazenWAZ_NR_UBOJOWY: TLongintField;
     ZLoadSettings: TZReadOnlyQuery;
     ZLoadTempData: TZReadOnlyQuery;
     ZLoadTempVal: TZReadOnlyQuery;
     ZListaWazen: TZReadOnlyQuery;
+    ZPozycjeNotyZLC_ILOSC_WAZEN: TLongintField;
+    ZPozycjeNotyZLC_ILOSC_ZAMOWIONA_MAS: TFloatField;
+    ZPozycjeNotyZLC_ILOSC_ZREALIZOWANA_MAS: TFloatField;
     ZPozycjeNotyZLC_KOD_ASORTYMENTU: TStringField;
     ZPozycjeNotyZLC_NAZWA_ASORTYMENTU: TStringField;
+    ZStornoQuery: TZQuery;
     ZWazeniaWAZ_ID: TLongintField;
     ZWazeniaWAZ_INDEKS: TStringField;
     ZWazeniaWAZ_MASA: TFloatField;
@@ -181,10 +186,19 @@ begin
   begin
     if Key = VK_RETURN then
     begin
-      MasaZwazona := PobierzMase();
-      SkanKodu();
-      //RefreshPnlValues();
-      Print();
+      if Length(KodWazenia) > 10 then
+      begin
+        ShowMessage('Niepoprawny kod!');
+      end
+      else
+      begin
+        MasaZwazona := PobierzMase();
+        if MasaZwazona >0 then
+        begin
+          SkanKodu();
+          Print();
+        end;
+      end;
       KodWazenia := '';
       RefreshPnlValues();
       RefreshGrd();
@@ -292,7 +306,7 @@ begin
 
 
   ZListaWazen.Close;
-  ZListaWazen.ParamByName('nota').Value := NumerNoty;
+  ZListaWazen.ParamByName('deviceid').Value := Config.sDeviceId;
   ZListaWazen.Open;
   BtnPgUpLista.Enabled:=(ZListaWazen.RecordCount>10);
   BtnPgDownLista.Enabled:=(ZListaWazen.RecordCount>10);
@@ -438,7 +452,11 @@ end;
 
 procedure TFormEkranGlowny.BtnStornoClick(Sender: TObject);
 begin
-  ShowMessage(ZWazeniaWAZ_ID.AsString);
+  ZStornoQuery.ParamByName('deviceid').Value := Config.sDeviceId;
+  ZStornoQuery.ParamByName('wazid').Value := ZWazeniaWAZ_ID.AsInteger;
+  ZStornoQuery.ExecSQL;
+  RefreshGrd();
+  //ShowMessage(ZWazeniaWAZ_ID.AsString);
 end;
 
 procedure TFormEkranGlowny.BtnZmianaWidokuClick(Sender: TObject);
@@ -483,11 +501,6 @@ begin
   RozmiarStrony := AGrid.Height div AGrid.DefaultRowHeight;
   DataSet := AGrid.DataSource.DataSet;
   DataSet.RecNo := DataSet.RecNo + RozmiarStrony;
-end;
-
-procedure TFormEkranGlowny.BtnWylogujClick(Sender: TObject);
-begin
-  Close;
 end;
 
 class function TFormEkranGlowny.Execute(AOprId: Integer; AOprNazwa: String): Boolean;
