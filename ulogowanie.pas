@@ -15,6 +15,7 @@ type
   TFormLogowanie = class(TForm)
     BtnRightPgDown: TSpeedButton;
     BtnRightPgUp: TSpeedButton;
+    BtnZaloguj: TButton;
     DSLiteraList: TDataSource;
     DSLoginList: TDataSource;
     GbLeft: TGroupBox;
@@ -25,7 +26,6 @@ type
     PnlLeft: TPanel;
     PnlRight: TPanel;
     Panel4: TPanel;
-    BtnZaloguj: TSpeedButton;
     BtnLeftPgUp: TSpeedButton;
     BtnLeftPgDown: TSpeedButton;
     ZLiteraList: TZReadOnlyQuery;
@@ -37,6 +37,7 @@ type
     procedure BtnRightPgDownClick(Sender: TObject);
     procedure BtnRightPgUpClick(Sender: TObject);
     procedure BtnLeftPgUpClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure GridPageUp(AGrid: TMVRxDBGrid);
     procedure GridPageDown(AGrid: TMVRxDBGrid);
     procedure BtnZalogujClick(Sender: TObject);
@@ -71,14 +72,20 @@ end;
 
 procedure TFormLogowanie.FormDestroy(Sender: TObject);
 begin
-  ZLiteraList.Close;
-  ZLoginList.Close;
+
 end;
 
 procedure TFormLogowanie.BtnLeftPgUpClick(Sender: TObject);
 begin
   GridPageUp(RxLiteraList);
   RxLiteraListCellClick(RxLiteraList.SelectedColumn);
+end;
+
+procedure TFormLogowanie.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  ZLiteraList.Close;
+  ZLoginList.Close;
 end;
 
 procedure TFormLogowanie.BtnLeftPgDownClick(Sender: TObject);

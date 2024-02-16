@@ -28,7 +28,6 @@ type
     bChangeAction : Boolean;
 
     // Modules
-    ModCwierci : Boolean;
 
     //Network
     sIpAddress : String;
@@ -130,7 +129,6 @@ begin
   sLauncher_Path := 'desktoplauncher.exe';
   sLauncher_Ini_Path := 'desktop-launcher.ini';
 
-  ModCwierci := True;
   sIpAddress := '0.0.0.0';
   sPort := '1045';
   bChangeAction := false;
@@ -175,8 +173,6 @@ begin
   sSelectedLanguage := f.ReadString('language', 'selected_language', sSelectedLanguage);
   sLangCode := f.ReadString('language','lang_code',sLangCode);
 
-  ModCwierci := f.ReadBool('modules', 'mod_cwierci', ModCwierci);
-
   sDB_Server   := f.ReadString('database','server'   ,sDB_Server);
   iDB_Port     := f.ReadInteger('database', 'port', iDB_Port);
   sDB_Database := f.ReadString('database','database' ,sDB_Database);
@@ -220,7 +216,6 @@ begin
   f.WriteString('language', 'selected_language', sSelectedLanguage);
   f.WriteString('language','lang_code',sLangCode);
 
-  f.WriteBool('modules', 'mod_cwierci', ModCwierci);
 
   f.WriteString('database','server'  , sDB_Server);
   f.WriteInteger('database', 'port', iDB_Port);

@@ -24,17 +24,12 @@ type
     BtnPgUpLista: TSpeedButton;
     BtnSkoraKoszerna: TButton;
     BtnSkoraZwykla: TButton;
-    CbWazenieAutomatyczne: TCheckBox;
     DSPozycjeNoty: TDataSource;
-    DBNavigator1: TDBNavigator;
     DSListaWazen: TDataSource;
     GbPozycjeNoty: TGroupBox;
     GbListaWazen: TGroupBox;
-    GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
-    LblSpacer1: TLabel;
-    LblSpacer2: TLabel;
     LblNumerNoty: TLabel;
     LblOdbiorca: TLabel;
     LblSamochod: TLabel;
@@ -52,6 +47,9 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
+    Panel1: TPanel;
+    PnlNames1: TPanel;
+    PnlValues1: TPanel;
     RadioGroup1: TGroupBox;
     RxPozycjeNoty: TMVRxDBGrid;
     PnlZeskanuj: TPanel;
@@ -69,11 +67,10 @@ type
     PnlTools: TPanel;
     RxClock1: TRxClock;
     RxDBGrid1: TRxDBGrid;
-    BtnWyloguj: TSpeedButton;
-    BtnStorno: TSpeedButton;
-    BtnZmianaWidoku: TSpeedButton;
-    BtnZakonczNote: TSpeedButton;
-    BtnWazenie: TSpeedButton;
+    BtnWyloguj: TButton;
+    BtnStorno: TButton;
+    BtnZmianaWidoku: TButton;
+    BtnZakonczNote: TButton;
     RxListaWazen: TMVRxDBGrid;
     TbAkcje: TToolBar;
     ZListaWazenWAZ_NR_UBOJOWY: TLongintField;
@@ -102,8 +99,6 @@ type
     ZPozycjeNoty: TZReadOnlyQuery;
     ZScanCode: TZQuery;
     ZScanNote: TZQuery;
-    ZZestawienie: TZQuery;
-    ZZestawienieLMW_ADRES: TStringField;
     procedure BtnZmianaWidokuClick(Sender: TObject);
     procedure BtnStornoClick(Sender: TObject);
     function PobierzMase(): Double;
@@ -115,7 +110,6 @@ type
     procedure GridPageDown(AGrid: TMVRxDBGrid);
     procedure GridPageUp(AGrid: TMVRxDBGrid);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure BtnWylogujClick(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: char);
@@ -150,22 +144,12 @@ begin
   NotaWczytana := False;
   KodWazenia := '';
   PnlZeskanuj.Visible := True;
-  CbWazenieAutomatyczne.Checked:=True;
-  CbWazenieAutomatyczne.Enabled := Config.ModCwierci;
-  BtnWazenie.Enabled := Config.ModCwierci;
-  BtnZmianaWidoku.Enabled := Config.ModCwierci;
-  BtnZmianaWidoku.Enabled := True;
 
   WidokListyWazen := False;
   BtnStorno.Enabled := false;
   BtnZmianaWidoku.Caption := 'Lista ważeń';
 
   BtnSkoraZwyklaClick(Sender);
-end;
-
-procedure TFormEkranGlowny.FormDestroy(Sender: TObject);
-begin
-  ZZestawienie.Close;
 end;
 
 procedure TFormEkranGlowny.FormKeyPress(Sender: TObject; var Key: char);
@@ -242,11 +226,9 @@ begin
     ZLoadTempData.ParamByName('deviceid').Value := Config.sDeviceId;
     ZLoadTempData.ParamByName('oprid').Value := OprId;
     ZLoadTempData.Open;
-    //MasaHaka := ZLoadSettings.FieldByName('MASA_HAKA').AsFloat;
     ZLoadTempData.Close;
 
     BtnSkoraZwyklaClick(nil);
-
     RefreshPnlValues();
   end;
   ZScanNote.Close;
@@ -257,20 +239,14 @@ begin
   ZScanCode.ParamByName('deviceid').Value := Config.sDeviceId;
   ZScanCode.ParamByName('code').Value := KodWazenia;
   ZScanCode.ParamByName('masa').Value := MasaZwazona;
-
   ZScanCode.ExecSQL;
-
 end;
 
 procedure TFormEkranGlowny.Print();
 begin
   ZPrintQuery.ParamByName('deviceid').Value := Config.sDeviceId;
-  //ZScanCode.ParamByName('code').Value := KodWazenia;
   ZPrintQuery.ParamByName('masa').Value := MasaZwazona;
-
   ZPrintQuery.ExecSQL;
-  //MasaHaka := ZLoadSettings.FieldByName('MASA_HAKA').AsFloat;
-
 end;
 
 procedure TFormEkranGlowny.RefreshPnlValues();
@@ -317,9 +293,8 @@ begin
   if NotaWczytana = True then
   begin
     BtnZakonczNoteClick(Sender);
-end;
-
-  FormEkranGlowny.Free;
+  end;
+  Close;
 end;
 
 procedure TFormEkranGlowny.BtnZakonczNoteClick(Sender: TObject);
@@ -328,7 +303,6 @@ begin
   NotaWczytana := False;
   KodWazenia := '';
   PnlZeskanuj.Visible := True;
-  CbWazenieAutomatyczne.Checked:=True;
   BtnSkoraZwyklaClick(Sender);
 
   ZResetTempVal.ExecSQL;
@@ -347,8 +321,8 @@ end;
 procedure TFormEkranGlowny.BtnSkoraZwyklaClick(Sender: TObject);
 begin
   SkoraKoszerna := False;
-  BtnSkoraZwykla.Color := clBtnShadow;
-  BtnSkoraKoszerna.Color := clDefault;
+  BtnSkoraZwykla.Color := $00A37C58;
+  BtnSkoraKoszerna.Color := $00EBCCAF;
   if NotaWczytana = True then
   begin
     ZRodzajSkory.ParamByName('deviceid').Value := Config.sDeviceId;
@@ -360,8 +334,8 @@ end;
 procedure TFormEkranGlowny.BtnSkoraKoszernaClick(Sender: TObject);
 begin
   SkoraKoszerna := True;
-  BtnSkoraZwykla.Color := clDefault;
-  BtnSkoraKoszerna.Color := clBtnShadow;
+  BtnSkoraZwykla.Color := $00EBCCAF;
+  BtnSkoraKoszerna.Color := $00A37C58;
   ZRodzajSkory.ParamByName('deviceid').Value := Config.sDeviceId;
   ZRodzajSkory.ParamByName('rodzaj').Value := 2;
   ZRodzajSkory.ExecSQL;
@@ -413,7 +387,7 @@ begin
   BytesReceived := fpRecv(ClientSocket, @Buffer, SizeOf(Buffer), 0);
   if BytesReceived < 0 then
   begin
-    ShowMessage('Error receiving data 1 from server.');
+    ShowMessage('Błąd odczytu danych (1) z wskaźnika!');
     Exit;
   end
   else
@@ -425,7 +399,7 @@ begin
   BytesReceived2 := fpRecv(ClientSocket, @Buffer2, SizeOf(Buffer), 0);
   if BytesReceived2 < 0 then
   begin
-    ShowMessage('Error receiving data 2 from server.');
+    ShowMessage('Błąd odczytu danych (2) z wskaźnika!');
     Exit;
   end
   else
@@ -452,11 +426,17 @@ end;
 
 procedure TFormEkranGlowny.BtnStornoClick(Sender: TObject);
 begin
-  ZStornoQuery.ParamByName('deviceid').Value := Config.sDeviceId;
-  ZStornoQuery.ParamByName('wazid').Value := ZWazeniaWAZ_ID.AsInteger;
-  ZStornoQuery.ExecSQL;
-  RefreshGrd();
-  //ShowMessage(ZWazeniaWAZ_ID.AsString);
+  if ZWazeniaWAZ_ID.AsInteger > 0 then
+  begin
+    ZStornoQuery.ParamByName('deviceid').Value := Config.sDeviceId;
+    ZStornoQuery.ParamByName('wazid').Value := ZWazeniaWAZ_ID.AsInteger;
+    ZStornoQuery.ExecSQL;
+    RefreshGrd();
+  end
+  else
+  begin
+    ShowMessage('Wybierz ważenie do stornowania!')
+  end;
 end;
 
 procedure TFormEkranGlowny.BtnZmianaWidokuClick(Sender: TObject);

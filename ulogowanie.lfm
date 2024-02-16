@@ -6,9 +6,11 @@ object FormLogowanie: TFormLogowanie
   Caption = 'Prima - Logowanie'
   ClientHeight = 1024
   ClientWidth = 1280
+  OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '2.0.12.0'
+  WindowState = wsMaximized
   object PnlFrame: TPanel
     Left = 20
     Height = 984
@@ -300,16 +302,18 @@ object FormLogowanie: TFormLogowanie
       Font.Height = -27
       ParentFont = False
       TabOrder = 2
-      object BtnZaloguj: TSpeedButton
+      object BtnZaloguj: TButton
         Left = 997
         Height = 78
         Top = 1
         Width = 240
         Align = alRight
         Caption = 'Loguj'
+        Color = 15453359
         Font.Height = -27
         OnClick = BtnZalogujClick
         ParentFont = False
+        TabOrder = 0
       end
     end
   end

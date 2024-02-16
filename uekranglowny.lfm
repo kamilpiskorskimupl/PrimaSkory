@@ -8,10 +8,10 @@ object FormEkranGlowny: TFormEkranGlowny
   ClientWidth = 1280
   KeyPreview = True
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   LCLVersion = '2.0.12.0'
+  WindowState = wsFullScreen
   object PnlFrame: TPanel
     Left = 20
     Height = 984
@@ -33,18 +33,7 @@ object FormEkranGlowny: TFormEkranGlowny
       Align = alBottom
       ClientHeight = 80
       ClientWidth = 1238
-      TabOrder = 0
-      object BtnWyloguj: TSpeedButton
-        Left = 997
-        Height = 78
-        Top = 1
-        Width = 240
-        Align = alRight
-        Caption = 'Wyloguj'
-        Font.Height = -27
-        OnClick = BtnWylogujClick
-        ParentFont = False
-      end
+      TabOrder = 2
       object Label1: TLabel
         Left = 21
         Height = 38
@@ -54,11 +43,24 @@ object FormEkranGlowny: TFormEkranGlowny
         AutoSize = False
         BorderSpacing.Around = 20
         Caption = 'Zalogowano jako: '
-        Font.Height = -27
+        Font.Height = -20
         Layout = tlCenter
         ParentBidiMode = False
         ParentColor = False
         ParentFont = False
+      end
+      object BtnWyloguj: TButton
+        Left = 997
+        Height = 78
+        Top = 1
+        Width = 240
+        Align = alRight
+        Caption = 'Wyloguj'
+        Color = 10006783
+        Font.Height = -27
+        OnClick = BtnWylogujClick
+        ParentFont = False
+        TabOrder = 0
       end
     end
     object PnlMain: TPanel
@@ -69,24 +71,23 @@ object FormEkranGlowny: TFormEkranGlowny
       Align = alClient
       ClientHeight = 902
       ClientWidth = 1238
-      TabOrder = 1
+      TabOrder = 0
       object PnlLeft: TPanel
         Left = 1
-        Height = 900
+        Height = 180
         Top = 1
-        Width = 530
-        Align = alLeft
+        Width = 1236
+        Align = alClient
         AutoSize = True
-        ClientHeight = 900
-        ClientWidth = 530
-        TabOrder = 1
+        ClientHeight = 180
+        ClientWidth = 1236
+        TabOrder = 2
         object PnlNames: TPanel
           Left = 1
-          Height = 398
+          Height = 178
           Top = 1
           Width = 128
           Align = alLeft
-          AutoSize = True
           ChildSizing.LeftRightSpacing = 10
           ChildSizing.TopBottomSpacing = 10
           ChildSizing.HorizontalSpacing = 10
@@ -94,7 +95,7 @@ object FormEkranGlowny: TFormEkranGlowny
           ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 398
+          ClientHeight = 178
           ClientWidth = 128
           TabOrder = 1
           object Label2: TLabel
@@ -145,81 +146,10 @@ object FormEkranGlowny: TFormEkranGlowny
             ParentColor = False
             ParentFont = False
           end
-          object LblSpacer1: TLabel
-            Left = 10
-            Height = 31
-            Top = 142
-            Width = 108
-            Caption = ' '
-            Constraints.MinHeight = 23
-            Font.Height = -27
-            ParentColor = False
-            ParentFont = False
-          end
-          object Label6: TLabel
-            Left = 10
-            Height = 23
-            Top = 183
-            Width = 108
-            Alignment = taRightJustify
-            Caption = 'Nr ubojowy:'
-            Constraints.MinHeight = 23
-            Font.Height = -20
-            ParentColor = False
-            ParentFont = False
-          end
-          object Label7: TLabel
-            Left = 10
-            Height = 23
-            Top = 216
-            Width = 108
-            Alignment = taRightJustify
-            Caption = 'Data uboju:'
-            Constraints.MinHeight = 23
-            Font.Height = -20
-            ParentColor = False
-            ParentFont = False
-          end
-          object Label8: TLabel
-            Left = 10
-            Height = 23
-            Top = 249
-            Width = 108
-            Alignment = taRightJustify
-            Caption = 'Indeks:'
-            Constraints.MinHeight = 23
-            Font.Height = -20
-            ParentColor = False
-            ParentFont = False
-          end
-          object Label9: TLabel
-            Left = 10
-            Height = 23
-            Top = 282
-            Width = 108
-            Alignment = taRightJustify
-            Caption = 'Towar:'
-            Constraints.MinHeight = 23
-            Font.Height = -20
-            ParentColor = False
-            ParentFont = False
-          end
-          object Label10: TLabel
-            Left = 10
-            Height = 23
-            Top = 315
-            Width = 108
-            Alignment = taRightJustify
-            Caption = 'Ilość poz.:'
-            Constraints.MinHeight = 23
-            Font.Height = -20
-            ParentColor = False
-            ParentFont = False
-          end
         end
         object PnlValues: TPanel
           Left = 129
-          Height = 398
+          Height = 178
           Top = 1
           Width = 400
           Align = alLeft
@@ -230,7 +160,7 @@ object FormEkranGlowny: TFormEkranGlowny
           ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 1
-          ClientHeight = 398
+          ClientHeight = 178
           ClientWidth = 400
           TabOrder = 0
           object LblNumerNoty: TLabel
@@ -273,21 +203,104 @@ object FormEkranGlowny: TFormEkranGlowny
             ParentColor = False
             ParentFont = False
           end
-          object LblSpacer2: TLabel
+        end
+        object PnlNames1: TPanel
+          Left = 529
+          Height = 178
+          Top = 1
+          Width = 128
+          Align = alLeft
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 10
+          ChildSizing.HorizontalSpacing = 10
+          ChildSizing.VerticalSpacing = 10
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 178
+          ClientWidth = 128
+          TabOrder = 2
+          object Label6: TLabel
             Left = 10
-            Height = 31
-            Top = 142
-            Width = 380
-            Caption = ' '
+            Height = 23
+            Top = 10
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Nr ubojowy:'
             Constraints.MinHeight = 23
-            Font.Height = -27
+            Font.Height = -20
             ParentColor = False
             ParentFont = False
           end
+          object Label7: TLabel
+            Left = 10
+            Height = 23
+            Top = 43
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Data uboju:'
+            Constraints.MinHeight = 23
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label8: TLabel
+            Left = 10
+            Height = 23
+            Top = 76
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Indeks:'
+            Constraints.MinHeight = 23
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label9: TLabel
+            Left = 10
+            Height = 23
+            Top = 109
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Towar:'
+            Constraints.MinHeight = 23
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label10: TLabel
+            Left = 10
+            Height = 23
+            Top = 142
+            Width = 108
+            Alignment = taRightJustify
+            Caption = 'Ilość poz.:'
+            Constraints.MinHeight = 23
+            Font.Height = -20
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object PnlValues1: TPanel
+          Left = 657
+          Height = 178
+          Top = 1
+          Width = 400
+          Align = alLeft
+          ChildSizing.LeftRightSpacing = 10
+          ChildSizing.TopBottomSpacing = 10
+          ChildSizing.HorizontalSpacing = 10
+          ChildSizing.VerticalSpacing = 10
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 178
+          ClientWidth = 400
+          TabOrder = 3
           object LblNumerUbojowy: TLabel
             Left = 10
             Height = 23
-            Top = 183
+            Top = 10
             Width = 380
             Constraints.MinHeight = 23
             Font.Height = -20
@@ -297,7 +310,7 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblDataUboju: TLabel
             Left = 10
             Height = 23
-            Top = 216
+            Top = 43
             Width = 380
             Constraints.MinHeight = 23
             Font.Height = -20
@@ -307,7 +320,7 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblIndeks: TLabel
             Left = 10
             Height = 23
-            Top = 249
+            Top = 76
             Width = 380
             Constraints.MinHeight = 23
             Font.Height = -20
@@ -317,7 +330,7 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblTowar: TLabel
             Left = 10
             Height = 23
-            Top = 282
+            Top = 109
             Width = 380
             Constraints.MinHeight = 23
             Font.Height = -20
@@ -327,7 +340,7 @@ object FormEkranGlowny: TFormEkranGlowny
           object LblIloscPoz: TLabel
             Left = 10
             Height = 23
-            Top = 315
+            Top = 142
             Width = 380
             Constraints.MinHeight = 23
             Font.Height = -20
@@ -335,118 +348,46 @@ object FormEkranGlowny: TFormEkranGlowny
             ParentFont = False
           end
         end
-        object PnlDaneButtons: TPanel
-          Left = 1
-          Height = 500
-          Top = 399
-          Width = 528
-          Align = alBottom
-          ClientHeight = 500
-          ClientWidth = 528
-          TabOrder = 2
-          object GroupBox1: TGroupBox
-            Left = 1
-            Height = 115
-            Top = 116
-            Width = 526
-            Align = alTop
-            Caption = 'Ważenie'
-            ClientHeight = 80
-            ClientWidth = 522
-            Font.Height = -27
-            ParentFont = False
-            TabOrder = 0
-            Visible = False
-            object BtnWazenie: TSpeedButton
-              Left = 0
-              Height = 80
-              Top = 0
-              Width = 250
-              Align = alLeft
-              Caption = 'Zważ ręcznie'
-            end
-            object CbWazenieAutomatyczne: TCheckBox
-              Left = 272
-              Height = 80
-              Top = 0
-              Width = 250
-              Align = alRight
-              AutoSize = False
-              Caption = 'Automatyczne'
-              TabOrder = 0
-            end
-          end
-          object RadioGroup1: TGroupBox
-            Left = 1
-            Height = 115
-            Top = 1
-            Width = 526
-            Align = alTop
-            Caption = 'Rodzaj skóry'
-            ClientHeight = 80
-            ClientWidth = 522
-            Font.Height = -27
-            ParentFont = False
-            TabOrder = 1
-            object BtnSkoraZwykla: TButton
-              Left = 0
-              Height = 80
-              Top = 0
-              Width = 250
-              Align = alLeft
-              Caption = 'Zwykła'
-              Color = clBtnShadow
-              OnClick = BtnSkoraZwyklaClick
-              TabOrder = 0
-            end
-            object BtnSkoraKoszerna: TButton
-              Left = 272
-              Height = 80
-              Top = 0
-              Width = 250
-              Align = alRight
-              Caption = 'Super koszerna'
-              OnClick = BtnSkoraKoszernaClick
-              TabOrder = 1
-            end
-          end
-        end
       end
       object PnlRight: TPanel
-        Left = 531
-        Height = 900
-        Top = 1
-        Width = 706
-        Align = alClient
-        ClientHeight = 900
-        ClientWidth = 706
-        TabOrder = 0
+        Left = 1
+        Height = 720
+        Top = 181
+        Width = 1236
+        Align = alBottom
+        ClientHeight = 720
+        ClientWidth = 1236
+        TabOrder = 1
         object PnlWazenia: TPanel
           Left = 1
-          Height = 818
+          Height = 599
           Top = 1
-          Width = 704
+          Width = 1234
           Align = alClient
-          ClientHeight = 818
-          ClientWidth = 704
+          ClientHeight = 599
+          ClientWidth = 1234
+          Color = clRed
+          ParentColor = False
           TabOrder = 0
           object GbPozycjeNoty: TGroupBox
             Left = 1
-            Height = 816
+            Height = 597
             Top = 1
-            Width = 702
+            Width = 1232
             Align = alClient
             Caption = 'Pozycje noty:'
-            ClientHeight = 781
-            ClientWidth = 698
+            ClientHeight = 562
+            ClientWidth = 1228
+            Color = 15453359
             Font.Height = -27
+            ParentColor = False
             ParentFont = False
             TabOrder = 0
             object RxPozycjeNoty: TMVRxDBGrid
               Left = 0
-              Height = 661
+              Height = 442
               Top = 60
-              Width = 698
+              Width = 1228
               TitleButtons = False
               AutoSort = True
               KeyStrokes = <              
@@ -530,7 +471,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Left = 0
               Height = 60
               Top = 0
-              Width = 698
+              Width = 1228
               Align = alTop
               Caption = '↑'
               Enabled = False
@@ -541,8 +482,8 @@ object FormEkranGlowny: TFormEkranGlowny
             object BtnPgDownPozycje: TSpeedButton
               Left = 0
               Height = 60
-              Top = 721
-              Width = 698
+              Top = 502
+              Width = 1228
               Align = alBottom
               Caption = '↓'
               Enabled = False
@@ -553,22 +494,24 @@ object FormEkranGlowny: TFormEkranGlowny
           end
           object GbListaWazen: TGroupBox
             Left = 1
-            Height = 816
+            Height = 597
             Top = 1
-            Width = 702
+            Width = 1232
             Align = alClient
             Caption = 'Lista Ważeń'
-            ClientHeight = 781
-            ClientWidth = 698
+            ClientHeight = 562
+            ClientWidth = 1228
+            Color = 10020863
             Font.Height = -27
+            ParentColor = False
             ParentFont = False
             TabOrder = 1
             Visible = False
             object RxListaWazen: TMVRxDBGrid
               Left = 0
-              Height = 661
+              Height = 442
               Top = 60
-              Width = 698
+              Width = 1228
               TitleButtons = False
               AutoSort = True
               KeyStrokes = <              
@@ -649,7 +592,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Left = 0
               Height = 60
               Top = 0
-              Width = 698
+              Width = 1228
               Align = alTop
               Caption = '↑'
               Enabled = False
@@ -660,8 +603,8 @@ object FormEkranGlowny: TFormEkranGlowny
             object BtnPgDownLista: TSpeedButton
               Left = 0
               Height = 60
-              Top = 721
-              Width = 698
+              Top = 502
+              Width = 1228
               Align = alBottom
               Caption = '↓'
               Enabled = False
@@ -671,53 +614,135 @@ object FormEkranGlowny: TFormEkranGlowny
             end
           end
         end
-        object PnlWazeniaButtons: TPanel
+        object Panel1: TPanel
           Left = 1
-          Height = 80
-          Top = 819
-          Width = 704
+          Height = 119
+          Top = 600
+          Width = 1234
           Align = alBottom
-          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
-          ChildSizing.EnlargeVertical = crsHomogenousChildResize
-          ChildSizing.Layout = cclTopToBottomThenLeftToRight
-          ChildSizing.ControlsPerLine = 1
-          ClientHeight = 80
-          ClientWidth = 704
+          AutoSize = True
+          Caption = 'Panel1'
+          ClientHeight = 119
+          ClientWidth = 1234
           TabOrder = 1
-          object BtnZmianaWidoku: TSpeedButton
-            Left = -2
-            Height = 78
+          object PnlDaneButtons: TPanel
+            Left = 1
+            Height = 117
             Top = 1
-            Width = 235
-            Align = alRight
-            Caption = 'Lista ważeń'
-            Font.Height = -27
-            OnClick = BtnZmianaWidokuClick
-            ParentFont = False
+            Width = 528
+            Align = alClient
+            AutoSize = True
+            ClientHeight = 117
+            ClientWidth = 528
+            ParentColor = False
+            TabOrder = 1
+            object RadioGroup1: TGroupBox
+              Left = 1
+              Height = 115
+              Top = 1
+              Width = 526
+              Align = alTop
+              Caption = 'Rodzaj skóry'
+              ClientHeight = 80
+              ClientWidth = 522
+              Font.Height = -27
+              ParentFont = False
+              TabOrder = 0
+              object BtnSkoraZwykla: TButton
+                Left = 0
+                Height = 80
+                Top = 0
+                Width = 250
+                Align = alLeft
+                Caption = 'Zwykła'
+                Color = 10714200
+                OnClick = BtnSkoraZwyklaClick
+                TabOrder = 0
+              end
+              object BtnSkoraKoszerna: TButton
+                Left = 272
+                Height = 80
+                Top = 0
+                Width = 250
+                Align = alRight
+                Caption = 'Super koszerna'
+                Color = 15453359
+                OnClick = BtnSkoraKoszernaClick
+                TabOrder = 1
+              end
+            end
           end
-          object BtnZakonczNote: TSpeedButton
-            Left = 468
-            Height = 78
+          object PnlWazeniaButtons: TPanel
+            Left = 529
+            Height = 117
             Top = 1
-            Width = 235
+            Width = 704
             Align = alRight
-            Caption = 'Zakończ notę'
-            Font.Height = -27
-            OnClick = BtnZakonczNoteClick
-            ParentFont = False
-          end
-          object BtnStorno: TSpeedButton
-            Left = 233
-            Height = 78
-            Top = 1
-            Width = 235
-            Align = alRight
-            Caption = 'Wykonaj storno'
-            Font.Height = -27
-            OnClick = BtnStornoClick
-            ParentFont = False
+            ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+            ChildSizing.EnlargeVertical = crsHomogenousChildResize
+            ChildSizing.Layout = cclTopToBottomThenLeftToRight
+            ChildSizing.ControlsPerLine = 1
+            ClientHeight = 117
+            ClientWidth = 704
+            TabOrder = 0
+            object BtnZmianaWidoku: TButton
+              Left = -2
+              Height = 115
+              Top = 1
+              Width = 235
+              Align = alRight
+              Caption = 'Lista ważeń'
+              Color = 15453359
+              Font.Height = -27
+              OnClick = BtnZmianaWidokuClick
+              ParentFont = False
+              TabOrder = 0
+            end
+            object BtnStorno: TButton
+              Left = 233
+              Height = 115
+              Top = 1
+              Width = 235
+              Align = alRight
+              Caption = 'Wykonaj storno'
+              Color = 10020863
+              Font.Height = -27
+              OnClick = BtnStornoClick
+              ParentFont = False
+              TabOrder = 1
+            end
+            object BtnZakonczNote: TButton
+              Left = 468
+              Height = 115
+              Top = 1
+              Width = 235
+              Align = alRight
+              Caption = 'Zakończ notę'
+              Color = 10006783
+              Font.Height = -27
+              OnClick = BtnZakonczNoteClick
+              ParentFont = False
+              TabOrder = 2
+            end
           end
         end
+      end
+      object PnlZeskanuj: TPanel
+        AnchorSideLeft.Control = PnlMain
+        AnchorSideTop.Control = PnlMain
+        AnchorSideRight.Control = PnlMain
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PnlMain
+        AnchorSideBottom.Side = asrBottom
+        Left = 288
+        Height = 200
+        Top = 384
+        Width = 600
+        Anchors = []
+        Caption = 'Zeskanuj notę aby rozpocząć pracę...'
+        Font.Height = -27
+        ParentFont = False
+        TabOrder = 0
       end
     end
     object PnlClock: TPanel
@@ -733,7 +758,7 @@ object FormEkranGlowny: TFormEkranGlowny
       ClientWidth = 170
       Color = 3909887
       ParentColor = False
-      TabOrder = 2
+      TabOrder = 1
       object RxClock1: TRxClock
         Left = 1
         Height = 34
@@ -743,16 +768,6 @@ object FormEkranGlowny: TFormEkranGlowny
         Font.Height = -27
         ParentFont = False
       end
-    end
-    object PnlZeskanuj: TPanel
-      Left = 552
-      Height = 240
-      Top = 280
-      Width = 640
-      Caption = 'Zeskanuj notę aby rozpocząć pracę...'
-      Font.Height = -27
-      ParentFont = False
-      TabOrder = 3
     end
   end
   object ZScanNote: TZQuery
@@ -771,8 +786,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'code'
         ParamType = ptUnknown
       end>
-    Left = 56
-    Top = 672
+    Left = 72
+    Top = 456
     ParamData = <    
       item
         DataType = ftUnknown
@@ -807,7 +822,7 @@ object FormEkranGlowny: TFormEkranGlowny
         ParamType = ptUnknown
       end>
     Left = 192
-    Top = 768
+    Top = 680
     ParamData = <    
       item
         DataType = ftUnknown
@@ -836,8 +851,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'deviceid'
         ParamType = ptUnknown
       end>
-    Left = 56
-    Top = 720
+    Left = 72
+    Top = 512
     ParamData = <    
       item
         DataType = ftUnknown
@@ -861,8 +876,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'oprid'
         ParamType = ptUnknown
       end>
-    Left = 56
-    Top = 768
+    Left = 72
+    Top = 568
     ParamData = <    
       item
         DataType = ftUnknown
@@ -886,8 +901,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'deviceid'
         ParamType = ptUnknown
       end>
-    Left = 56
-    Top = 824
+    Left = 72
+    Top = 624
     ParamData = <    
       item
         DataType = ftUnknown
@@ -988,8 +1003,8 @@ object FormEkranGlowny: TFormEkranGlowny
   end
   object DSPozycjeNoty: TDataSource
     DataSet = ZPozycjeNoty
-    Left = 600
-    Top = 656
+    Left = 152
+    Top = 768
   end
   object ZPrintQuery: TZQuery
     Connection = Commons.DbWysylka
@@ -1038,7 +1053,7 @@ object FormEkranGlowny: TFormEkranGlowny
         ParamType = ptUnknown
       end>
     Left = 192
-    Top = 672
+    Top = 568
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1062,8 +1077,8 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'deviceid'
         ParamType = ptUnknown
       end>
-    Left = 56
-    Top = 880
+    Left = 72
+    Top = 680
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1101,7 +1116,7 @@ object FormEkranGlowny: TFormEkranGlowny
         ParamType = ptUnknown
       end>
     Left = 192
-    Top = 720
+    Top = 624
     ParamData = <    
       item
         DataType = ftUnknown

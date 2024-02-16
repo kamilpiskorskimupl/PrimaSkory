@@ -26,8 +26,7 @@ begin
   Commons.DbWysylka.Connect;
   Commons.ZQueryANSI.ExecSQL;
 
-  FormLogowanie := TFormLogowanie.Create(Application);
-  FormLogowanie.Show();
+  Application.CreateForm(TFormLogowanie, FormLogowanie);
   Application.Run
 end;
 
@@ -43,7 +42,6 @@ var
   GlobalLogDirectory : String;
 
 begin
-  RequireDerivedFormResource:=True;
   Application.Title:='PrimaSkory';
   Application.Scaled:=True;
   Application.Initialize;
