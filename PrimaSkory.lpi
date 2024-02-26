@@ -20,13 +20,14 @@
         <CompilerOptions>
           <Version Value="11"/>
           <Target>
-            <Filename Value="PrimaSkory"/>
+            <Filename Value="PrimaSkory.exe"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
             <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
+            <TargetCPU Value="i386"/>
             <TargetOS Value="win32"/>
           </CodeGeneration>
           <Linking>
