@@ -7,3 +7,5 @@ PrimaSkory.res
 *.7z
 *.zip
 *.dbg
+hidemagic.py
+packexe.sh

@@ -140,6 +140,7 @@ implementation
 
 procedure TFormEkranGlowny.FormCreate(Sender: TObject);
 begin
+  BoundsRect := Screen.MonitorFromWindow(Handle).BoundsRect;
   NumerNoty := '';
   NotaWczytana := False;
   KodWazenia := '';
@@ -194,6 +195,7 @@ begin
       if Pos('OTE', NumerNoty) = 0 then
       begin
         ShowMessage('Niepoprawny numer noty!');
+        NumerNoty := '';
         Exit();
       end;
       WczytajNote();
@@ -230,7 +232,8 @@ begin
 
     BtnSkoraZwyklaClick(nil);
     RefreshPnlValues();
-  end;
+  end
+  else ShowMessage(ZScanNote.FieldByName('RESULT').AsString);
   ZScanNote.Close;
 end;
 

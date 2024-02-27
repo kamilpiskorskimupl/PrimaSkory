@@ -1,8 +1,9 @@
 object FormEkranGlowny: TFormEkranGlowny
-  Left = 645
+  Left = 572
   Height = 1024
-  Top = 232
+  Top = 162
   Width = 1280
+  BorderStyle = bsNone
   Caption = 'Prima Skóry'
   ClientHeight = 1024
   ClientWidth = 1280
@@ -366,7 +367,6 @@ object FormEkranGlowny: TFormEkranGlowny
           Align = alClient
           ClientHeight = 599
           ClientWidth = 1234
-          Color = clRed
           ParentColor = False
           TabOrder = 0
           object GbPozycjeNoty: TGroupBox
