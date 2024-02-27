@@ -15,7 +15,7 @@ type
   TFormLogowanie = class(TForm)
     BtnRightPgDown: TSpeedButton;
     BtnRightPgUp: TSpeedButton;
-    BtnZaloguj: TButton;
+    BtnZaloguj: TSpeedButton;
     DSLiteraList: TDataSource;
     DSLoginList: TDataSource;
     GbLeft: TGroupBox;

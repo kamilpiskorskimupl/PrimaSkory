@@ -1,7 +1,7 @@
 object FormEkranGlowny: TFormEkranGlowny
-  Left = 572
+  Left = 512
   Height = 1024
-  Top = 162
+  Top = 54
   Width = 1280
   BorderStyle = bsNone
   Caption = 'Prima Skóry'
@@ -50,7 +50,7 @@ object FormEkranGlowny: TFormEkranGlowny
         ParentColor = False
         ParentFont = False
       end
-      object BtnWyloguj: TButton
+      object BtnWyloguj: TSpeedButton
         Left = 997
         Height = 78
         Top = 1
@@ -58,10 +58,11 @@ object FormEkranGlowny: TFormEkranGlowny
         Align = alRight
         Caption = 'Wyloguj'
         Color = 10006783
+        Flat = True
         Font.Height = -27
+        Transparent = False
         OnClick = BtnWylogujClick
         ParentFont = False
-        TabOrder = 0
       end
     end
     object PnlMain: TPanel
@@ -648,7 +649,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Font.Height = -27
               ParentFont = False
               TabOrder = 0
-              object BtnSkoraZwykla: TButton
+              object BtnSkoraZwykla: TSpeedButton
                 Left = 0
                 Height = 80
                 Top = 0
@@ -656,10 +657,11 @@ object FormEkranGlowny: TFormEkranGlowny
                 Align = alLeft
                 Caption = 'Zwykła'
                 Color = 10714200
+                Flat = True
+                Transparent = False
                 OnClick = BtnSkoraZwyklaClick
-                TabOrder = 0
               end
-              object BtnSkoraKoszerna: TButton
+              object BtnSkoraKoszerna: TSpeedButton
                 Left = 272
                 Height = 80
                 Top = 0
@@ -667,8 +669,9 @@ object FormEkranGlowny: TFormEkranGlowny
                 Align = alRight
                 Caption = 'Super koszerna'
                 Color = 15453359
+                Flat = True
+                Transparent = False
                 OnClick = BtnSkoraKoszernaClick
-                TabOrder = 1
               end
             end
           end
@@ -685,7 +688,7 @@ object FormEkranGlowny: TFormEkranGlowny
             ClientHeight = 117
             ClientWidth = 704
             TabOrder = 0
-            object BtnZmianaWidoku: TButton
+            object BtnZmianaWidoku: TSpeedButton
               Left = -2
               Height = 115
               Top = 1
@@ -693,12 +696,13 @@ object FormEkranGlowny: TFormEkranGlowny
               Align = alRight
               Caption = 'Lista ważeń'
               Color = 15453359
+              Flat = True
               Font.Height = -27
+              Transparent = False
               OnClick = BtnZmianaWidokuClick
               ParentFont = False
-              TabOrder = 0
             end
-            object BtnStorno: TButton
+            object BtnStorno: TSpeedButton
               Left = 233
               Height = 115
               Top = 1
@@ -706,12 +710,13 @@ object FormEkranGlowny: TFormEkranGlowny
               Align = alRight
               Caption = 'Wykonaj storno'
               Color = 10020863
+              Flat = True
               Font.Height = -27
+              Transparent = False
               OnClick = BtnStornoClick
               ParentFont = False
-              TabOrder = 1
             end
-            object BtnZakonczNote: TButton
+            object BtnZakonczNote: TSpeedButton
               Left = 468
               Height = 115
               Top = 1
@@ -719,10 +724,11 @@ object FormEkranGlowny: TFormEkranGlowny
               Align = alRight
               Caption = 'Zakończ notę'
               Color = 10006783
+              Flat = True
               Font.Height = -27
+              Transparent = False
               OnClick = BtnZakonczNoteClick
               ParentFont = False
-              TabOrder = 2
             end
           end
         end

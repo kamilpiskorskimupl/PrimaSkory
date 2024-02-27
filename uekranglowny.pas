@@ -22,8 +22,12 @@ type
     BtnPgDownLista: TSpeedButton;
     BtnPgUpPozycje: TSpeedButton;
     BtnPgUpLista: TSpeedButton;
-    BtnSkoraKoszerna: TButton;
-    BtnSkoraZwykla: TButton;
+    BtnSkoraKoszerna: TSpeedButton;
+    BtnSkoraZwykla: TSpeedButton;
+    BtnStorno: TSpeedButton;
+    BtnWyloguj: TSpeedButton;
+    BtnZakonczNote: TSpeedButton;
+    BtnZmianaWidoku: TSpeedButton;
     DSPozycjeNoty: TDataSource;
     DSListaWazen: TDataSource;
     GbPozycjeNoty: TGroupBox;
@@ -67,10 +71,6 @@ type
     PnlTools: TPanel;
     RxClock1: TRxClock;
     RxDBGrid1: TRxDBGrid;
-    BtnWyloguj: TButton;
-    BtnStorno: TButton;
-    BtnZmianaWidoku: TButton;
-    BtnZakonczNote: TButton;
     RxListaWazen: TMVRxDBGrid;
     TbAkcje: TToolBar;
     ZListaWazenWAZ_NR_UBOJOWY: TLongintField;
@@ -368,7 +368,7 @@ begin
   FillChar(ServerAddr, SizeOf(ServerAddr), 0);
   ServerAddr.sin_family := AF_INET;
   ServerAddr.sin_port := htons(4001);
-  ServerAddr.sin_addr.s_addr := htonl(StrToHostAddr('192.168.0.118').s_addr);
+  ServerAddr.sin_addr.s_addr := htonl(StrToHostAddr(Config.sWskaznikIp).s_addr);
 
   // Connect to server
   if fpConnect(ClientSocket, @ServerAddr, SizeOf(ServerAddr)) <> 0 then
@@ -416,6 +416,8 @@ begin
   if Pos('kg', Buffer2) > 0 then
   begin
     WeightString := (Trim(Copy(Buffer2, 4, 12)));
+    DecimalSeparator := '.';
+    if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
     Weight := StrToFloat(WeightString);
     Weight := Weight - MasaHaka;
 

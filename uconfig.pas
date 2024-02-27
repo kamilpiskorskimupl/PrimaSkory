@@ -33,6 +33,8 @@ type
     sIpAddress : String;
     sPort : String;
 
+    sWskaznikIp : String;
+
     // Debug
     bLocalEcho : Boolean;
     iLevel,
@@ -130,6 +132,7 @@ begin
   sLauncher_Ini_Path := 'desktop-launcher.ini';
 
   sIpAddress := '0.0.0.0';
+  sWskaznikIp := '0.0.0.0';
   sPort := '1045';
   bChangeAction := false;
 
@@ -184,6 +187,7 @@ begin
   bDB_AutoEncodeStrings := f.ReadBool('database','auto_encode_strings', bDB_AutoEncodeStrings);
   sDB_CtrlsCP  := f.ReadString('database','controls_codepage', sDB_CtrlsCP);
   sDB_ClientCP := f.ReadString('database','client_codepage', sDB_ClientCP);
+  sWskaznikIP :=  f.ReadString('network','ip_wskaznika', sWskaznikIP);
 
   //_debug.loglx(L_INFO, 'PrimaSkory', 'TConfig', 'Restore.Read.LocalEcho');
   //_debug.bLocalEcho := f.ReadBool('debug','local_echo', false);
@@ -228,6 +232,7 @@ begin
   f.WriteBool('database','auto_encode_strings',bDB_AutoEncodeStrings);
   f.WriteString('database','controls_codepage',sDB_CtrlsCP);
   f.WriteString('database','client_codepage',sDB_ClientCP);
+  f.WriteString('network','ip_wskaznika', sWskaznikIP);
 
   f.WriteString('debug','log_path',sLogPath);
   f.WriteBool('debug','local_echo',_debug.bLocalEcho);

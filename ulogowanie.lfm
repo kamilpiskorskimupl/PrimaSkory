@@ -302,7 +302,7 @@ object FormLogowanie: TFormLogowanie
       Font.Height = -27
       ParentFont = False
       TabOrder = 2
-      object BtnZaloguj: TButton
+      object BtnZaloguj: TSpeedButton
         Left = 997
         Height = 78
         Top = 1
@@ -310,10 +310,11 @@ object FormLogowanie: TFormLogowanie
         Align = alRight
         Caption = 'Loguj'
         Color = 15453359
+        Flat = True
         Font.Height = -27
+        Transparent = False
         OnClick = BtnZalogujClick
         ParentFont = False
-        TabOrder = 0
       end
     end
   end
