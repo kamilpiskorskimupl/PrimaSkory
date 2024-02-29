@@ -181,12 +181,16 @@ begin
         if MasaZwazona >0 then
         begin
           SkanKodu();
-          Print();
+          RefreshPnlValues();
+          if Label8.Caption = 'Brak' then
+            ShowMessage('Brak wybranego indeksu na nocie!')
+          else
+            Print();
         end;
       end;
       KodWazenia := '';
-      RefreshPnlValues();
       RefreshGrd();
+      PnlNames.SetFocus;
     end;
   end
   else begin
@@ -200,6 +204,7 @@ begin
       end;
       WczytajNote();
       RefreshGrd();
+      PnlNames.SetFocus;
     end;
   end;
 end;
@@ -415,6 +420,7 @@ begin
 
   if Pos('kg', Buffer2) > 0 then
   begin
+    WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
     WeightString := (Trim(Copy(Buffer2, 4, 12)));
     DecimalSeparator := '.';
     if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
@@ -425,7 +431,8 @@ begin
   end
   else
   begin
-    ShowMessage('Otrzymano niepoprawne dane!');
+    ShowMessage('Otrzymano niepoprawne dane ze wskaźnika!');
+    Result := 0;
   end;
 end;
 

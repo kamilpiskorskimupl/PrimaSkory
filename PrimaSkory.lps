@@ -17,8 +17,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uConfig"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="40"/>
-        <CursorPos X="27" Y="76"/>
+        <TopLine Value="13"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -27,7 +26,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVersion"/>
         <EditorIndex Value="6"/>
-        <CursorPos X="100" Y="19"/>
+        <CursorPos X="25" Y="26"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -52,8 +51,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLogowanie"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="37"/>
-        <CursorPos X="36" Y="64"/>
+        <TopLine Value="67"/>
+        <CursorPos X="24" Y="49"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -67,8 +66,8 @@
         <UnitName Value="uEkranGlowny"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="118"/>
-        <CursorPos X="28" Y="126"/>
+        <TopLine Value="161"/>
+        <CursorPos X="21" Y="161"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -78,7 +77,7 @@
         <UnitName Value="uDebug"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="48" Y="80"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="71"/>
       </Unit6>
       <Unit7>
         <Filename Value="main.pas"/>
@@ -88,14 +87,14 @@
         <UnitName Value="uLogowanie"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="14"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="23"/>
       </Unit7>
       <Unit8>
         <Filename Value="../components/Lazarus-zeosdbo/src/plain/ZPlainDbLibDriver.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="633"/>
         <CursorPos Y="653"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="105"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
       <Unit9>
@@ -104,21 +103,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="104"/>
         <CursorPos X="30" Y="165"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="40"/>
       </Unit9>
       <Unit10>
         <Filename Value="/usr/lib64/lazarus/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2144"/>
         <CursorPos Y="2174"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit10>
       <Unit11>
         <Filename Value="/usr/lib64/lazarus/lcl/include/wincontrol.inc"/>
         <EditorIndex Value="4"/>
         <TopLine Value="5645"/>
         <CursorPos Y="5676"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -126,7 +125,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2213"/>
         <CursorPos Y="2242"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit12>
       <Unit13>
         <Filename Value="/usr/lib64/lazarus/lcl/lclmessageglue.pas"/>
@@ -134,150 +133,150 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="90"/>
         <CursorPos Y="123"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit13>
       <Unit14>
         <Filename Value="/usr/lib64/lazarus/lcl/interfaces/gtk2/gtk2proc.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2525"/>
         <CursorPos Y="2557"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit14>
       <Unit15>
         <Filename Value="/usr/lib64/lazarus/lcl/interfaces/gtk2/gtk2callback.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="739"/>
         <CursorPos Y="769"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit15>
       <Unit16>
         <Filename Value="/usr/lib64/lazarus/lcl/interfaces/gtk2/gtk2widgetset.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2329"/>
         <CursorPos X="41" Y="2355"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="9"/>
       </Unit16>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="PrimaSkory.lpr"/>
-        <Caret Line="56" Column="9"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="371" Column="71" TopLine="347"/>
       </Position1>
       <Position2>
-        <Filename Value="PrimaSkory.lpr"/>
-        <Caret Line="54" Column="4"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="370" Column="71" TopLine="346"/>
       </Position2>
       <Position3>
-        <Filename Value="PrimaSkory.lpr"/>
-        <Caret Line="55" Column="18"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="371" Column="71" TopLine="347"/>
       </Position3>
       <Position4>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="412" Column="59" TopLine="361"/>
+        <Caret Line="370" Column="71" TopLine="346"/>
       </Position4>
       <Position5>
-        <Filename Value="uekranglowny.pas"/>
-        <Caret Line="425" Column="32" TopLine="375"/>
+        <Filename Value="ulogowanie.pas"/>
+        <Caret Line="64" Column="36" TopLine="37"/>
       </Position5>
       <Position6>
-        <Filename Value="uekranglowny.pas"/>
-        <Caret Line="256" Column="9" TopLine="227"/>
+        <Filename Value="ulogowanie.pas"/>
+        <Caret Line="63" Column="36" TopLine="36"/>
       </Position6>
       <Position7>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="229" Column="11" TopLine="221"/>
+        <Caret Line="419" Column="57" TopLine="402"/>
       </Position7>
       <Position8>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="223" Column="53" TopLine="202"/>
+        <Caret Line="423" Column="52" TopLine="398"/>
       </Position8>
       <Position9>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="229" Column="15" TopLine="202"/>
+        <Caret Line="127" Column="13" TopLine="110"/>
       </Position9>
       <Position10>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="228" Column="66" TopLine="202"/>
+        <Caret Line="231" Column="41" TopLine="214"/>
       </Position10>
       <Position11>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="254" Column="64" TopLine="204"/>
+        <Caret Line="420" Column="68" TopLine="390"/>
       </Position11>
       <Position12>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="36" Column="34"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="427" Column="47" TopLine="400"/>
       </Position12>
       <Position13>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="394" Column="37" TopLine="382"/>
+        <Caret Line="349" Column="20" TopLine="336"/>
       </Position13>
       <Position14>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="182" Column="18" TopLine="159"/>
+        <Caret Line="352" Column="38" TopLine="336"/>
       </Position14>
       <Position15>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="117" Column="15" TopLine="100"/>
+        <Caret Line="104" Column="25" TopLine="87"/>
       </Position15>
       <Position16>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="249" Column="47" TopLine="227"/>
+        <Caret Line="190" Column="97" TopLine="172"/>
       </Position16>
       <Position17>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="144" Column="3" TopLine="124"/>
+        <Caret Line="234" Column="32" TopLine="201"/>
       </Position17>
       <Position18>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="142" Column="6" TopLine="125"/>
+        <Caret Line="253" Column="60" TopLine="239"/>
       </Position18>
       <Position19>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="147" Column="14" TopLine="125"/>
+        <Caret Line="254" Column="9" TopLine="239"/>
       </Position19>
       <Position20>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="221" Column="16" TopLine="191"/>
+        <Caret Line="255" Column="9" TopLine="239"/>
       </Position20>
       <Position21>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="307" Column="14" TopLine="277"/>
+        <Caret Line="97" Column="11" TopLine="80"/>
       </Position21>
       <Position22>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="236" Column="56" TopLine="203"/>
+        <Caret Line="118" Column="20" TopLine="89"/>
       </Position22>
       <Position23>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="37" Column="34"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="185" Column="29" TopLine="161"/>
       </Position23>
       <Position24>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="36" Column="34"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="266" Column="35" TopLine="236"/>
       </Position24>
       <Position25>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="24" Column="29"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="267" Column="32" TopLine="237"/>
       </Position25>
       <Position26>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="44" Column="25" TopLine="14"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="266" Column="28" TopLine="237"/>
       </Position26>
       <Position27>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="236" Column="19" TopLine="219"/>
+        <Caret Line="185" Column="21" TopLine="167"/>
       </Position27>
       <Position28>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="364" Column="12" TopLine="334"/>
+        <Caret Line="151" Column="19" TopLine="133"/>
       </Position28>
       <Position29>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="493" Column="34" TopLine="463"/>
+        <Caret Line="186" Column="62" TopLine="155"/>
       </Position29>
       <Position30>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="112" Column="25" TopLine="95"/>
+        <Caret Line="152" Column="60" TopLine="133"/>
       </Position30>
     </JumpHistory>
     <RunParams>
