@@ -7,8 +7,7 @@
       <Unit0>
         <Filename Value="PrimaSkory.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="10"/>
-        <CursorPos X="57" Y="46"/>
+        <CursorPos X="35" Y="35"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -16,8 +15,9 @@
         <Filename Value="uconfig.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uConfig"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="13"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="170"/>
+        <CursorPos X="77" Y="192"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -25,8 +25,9 @@
         <Filename Value="uversion.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVersion"/>
-        <EditorIndex Value="6"/>
-        <CursorPos X="25" Y="26"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="27" Y="26"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -51,7 +52,6 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLogowanie"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="67"/>
         <CursorPos X="24" Y="49"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
@@ -64,10 +64,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEkranGlowny"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="161"/>
-        <CursorPos X="21" Y="161"/>
+        <TopLine Value="184"/>
+        <CursorPos X="47" Y="203"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -114,11 +113,10 @@
       </Unit10>
       <Unit11>
         <Filename Value="/usr/lib64/lazarus/lcl/include/wincontrol.inc"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="5645"/>
         <CursorPos Y="5676"/>
         <UsageCount Value="60"/>
-        <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="/usr/lib64/lazarus/lcl/include/control.inc"/>
@@ -160,123 +158,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="371" Column="71" TopLine="347"/>
+        <Caret Line="280" Column="43" TopLine="243"/>
       </Position1>
       <Position2>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="370" Column="71" TopLine="346"/>
+        <Caret Line="300" Column="11" TopLine="263"/>
       </Position2>
       <Position3>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="371" Column="71" TopLine="347"/>
+        <Caret Line="311" Column="9" TopLine="274"/>
       </Position3>
       <Position4>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="370" Column="71" TopLine="346"/>
+        <Caret Line="326" Column="9" TopLine="289"/>
       </Position4>
       <Position5>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="64" Column="36" TopLine="37"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="392" Column="9" TopLine="355"/>
       </Position5>
       <Position6>
-        <Filename Value="ulogowanie.pas"/>
-        <Caret Line="63" Column="36" TopLine="36"/>
+        <Filename Value="uekranglowny.pas"/>
+        <Caret Line="405" Column="11" TopLine="368"/>
       </Position6>
       <Position7>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="419" Column="57" TopLine="402"/>
+        <Caret Line="447" Column="9" TopLine="411"/>
       </Position7>
       <Position8>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="423" Column="52" TopLine="398"/>
+        <Caret Line="454" Column="11" TopLine="418"/>
       </Position8>
       <Position9>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="127" Column="13" TopLine="110"/>
+        <Caret Line="469" Column="9" TopLine="433"/>
       </Position9>
       <Position10>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="231" Column="41" TopLine="214"/>
+        <Caret Line="538" Column="9" TopLine="501"/>
       </Position10>
       <Position11>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="420" Column="68" TopLine="390"/>
+        <Caret Line="174" Column="13" TopLine="152"/>
       </Position11>
       <Position12>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="427" Column="47" TopLine="400"/>
+        <Caret Line="178" Column="15" TopLine="152"/>
       </Position12>
       <Position13>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="349" Column="20" TopLine="336"/>
+        <Caret Line="191" Column="19" TopLine="154"/>
       </Position13>
       <Position14>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="352" Column="38" TopLine="336"/>
+        <Caret Line="209" Column="13" TopLine="173"/>
       </Position14>
       <Position15>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="104" Column="25" TopLine="87"/>
+        <Caret Line="213" Column="15" TopLine="177"/>
       </Position15>
       <Position16>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="190" Column="97" TopLine="172"/>
+        <Caret Line="227" Column="9" TopLine="190"/>
       </Position16>
       <Position17>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="234" Column="32" TopLine="201"/>
+        <Caret Line="235" Column="11" TopLine="198"/>
       </Position17>
       <Position18>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="253" Column="60" TopLine="239"/>
+        <Caret Line="258" Column="9" TopLine="221"/>
       </Position18>
       <Position19>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="254" Column="9" TopLine="239"/>
+        <Caret Line="263" Column="9" TopLine="226"/>
       </Position19>
       <Position20>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="255" Column="9" TopLine="239"/>
+        <Caret Line="272" Column="9" TopLine="235"/>
       </Position20>
       <Position21>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="97" Column="11" TopLine="80"/>
+        <Caret Line="280" Column="9" TopLine="243"/>
       </Position21>
       <Position22>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="118" Column="20" TopLine="89"/>
+        <Caret Line="272" Column="3" TopLine="243"/>
       </Position22>
       <Position23>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="185" Column="29" TopLine="161"/>
+        <Caret Line="277" Column="52" TopLine="249"/>
       </Position23>
       <Position24>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="266" Column="35" TopLine="236"/>
+        <Caret Line="282" Column="9" TopLine="249"/>
       </Position24>
       <Position25>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="267" Column="32" TopLine="237"/>
+        <Caret Line="302" Column="11" TopLine="265"/>
       </Position25>
       <Position26>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="266" Column="28" TopLine="237"/>
+        <Caret Line="455" Column="41" TopLine="430"/>
       </Position26>
       <Position27>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="185" Column="21" TopLine="167"/>
+        <Caret Line="190" Column="61" TopLine="170"/>
       </Position27>
       <Position28>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="151" Column="19" TopLine="133"/>
+        <Caret Line="540" Column="24" TopLine="509"/>
       </Position28>
       <Position29>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="186" Column="62" TopLine="155"/>
+        <Caret Line="203" Column="24" TopLine="182"/>
       </Position29>
       <Position30>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="152" Column="60" TopLine="133"/>
+        <Caret Line="220" Column="24" TopLine="184"/>
       </Position30>
     </JumpHistory>
     <RunParams>

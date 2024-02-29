@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ComCtrls, DBCtrls, Buttons, Grids, Calendar, DateTimePicker, switches,
   rxdbgrid, rxswitch, rxclock, ZDataset, LCLType, uConfig, uMVRxDBGrid,
-  character, Sockets;
+  character, Sockets, uDebug;
 
 type
 
@@ -171,9 +171,11 @@ begin
   begin
     if Key = VK_RETURN then
     begin
+      _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Kod zeskanowany', KodWazenia);
       if Length(KodWazenia) > 10 then
       begin
         ShowMessage('Niepoprawny kod!');
+        _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Niepoprawny kod!', KodWazenia);
       end
       else
       begin
@@ -182,35 +184,47 @@ begin
         begin
           SkanKodu();
           RefreshPnlValues();
-          if Label8.Caption = 'Brak' then
-            ShowMessage('Brak wybranego indeksu na nocie!')
+          if Pos('Brak', Label8.Caption) > 0 then
+          begin
+            FormEkranGlowny.Color:=ClRed;
+            ShowMessage('Brak wybranego indeksu na nocie!');
+            _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Brak wybranego indeksu na nocie!', '');
+          end
           else
+          begin
+            FormEkranGlowny.Color := ClDefault;
             Print();
+          end;
         end;
       end;
+      Key := 0;
       KodWazenia := '';
       RefreshGrd();
-      PnlNames.SetFocus;
+      FormEkranGlowny.SetFocus;
     end;
   end
   else begin
     if Key = VK_RETURN then
     begin
+      _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Nota zeskanowana:', NumerNoty);
       if Pos('OTE', NumerNoty) = 0 then
       begin
         ShowMessage('Niepoprawny numer noty!');
+        _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Niepoprawny numer noty!', NumerNoty);
         NumerNoty := '';
         Exit();
       end;
+      Key := 0;
       WczytajNote();
       RefreshGrd();
-      PnlNames.SetFocus;
+      FormEkranGlowny.SetFocus;
     end;
   end;
 end;
 
 procedure TFormEkranGlowny.WczytajNote();
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'WczytajNote', 'Begin');
   ZScanNote.ParamByName('deviceid').Value := Config.sDeviceId;
   ZScanNote.ParamByName('code').Value := NumerNoty;
 
@@ -218,6 +232,7 @@ begin
   if ZScanNote.FieldByName('RESULT').AsString = 'NOTA_FINISHED' then
   begin
     ShowMessage('Zeskanowana nota jest zakończona!');
+    _debug.loglx(L_INFO, 'EkranGlowny', 'WczytajNote', 'Zeskanowana nota jest zakonczona!');
     Exit();
   end
   else if ZScanNote.FieldByName('RESULT').AsString = 'OK' then
@@ -240,25 +255,31 @@ begin
   end
   else ShowMessage(ZScanNote.FieldByName('RESULT').AsString);
   ZScanNote.Close;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'WczytajNote', 'End');
 end;
 
 procedure TFormEkranGlowny.SkanKodu();
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'SkanKodu', 'Begin');
   ZScanCode.ParamByName('deviceid').Value := Config.sDeviceId;
   ZScanCode.ParamByName('code').Value := KodWazenia;
   ZScanCode.ParamByName('masa').Value := MasaZwazona;
   ZScanCode.ExecSQL;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'SkanKodu', 'End');
 end;
 
 procedure TFormEkranGlowny.Print();
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'Print', 'Begin');
   ZPrintQuery.ParamByName('deviceid').Value := Config.sDeviceId;
   ZPrintQuery.ParamByName('masa').Value := MasaZwazona;
   ZPrintQuery.ExecSQL;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'Print', 'End');
 end;
 
 procedure TFormEkranGlowny.RefreshPnlValues();
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'RefreshPanelValues', 'Begin');
   ZLoadTempVal.Close;
   ZLoadTempVal.ParamByName('deviceid').Value := Config.sDeviceId;
     ZLoadTempVal.Open;
@@ -278,22 +299,24 @@ begin
       ZLoadTempVal.Next;
     end;
     ZLoadTempVal.Close;
+    _debug.loglx(L_INFO, 'EkranGlowny', 'RefreshPanelValues', 'End');
 end;
 
 procedure TFormEkranGlowny.RefreshGrd();
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'RefreshGrd', 'Begin');
   ZPozycjeNoty.Close;
   ZPozycjeNoty.ParamByName('deviceid').Value := Config.sDeviceId;
   ZPozycjeNoty.Open;
-  BtnPgUpPozycje.Enabled:=(ZPozycjeNoty.RecordCount>10);
-  BtnPgDownPozycje.Enabled:=(ZPozycjeNoty.RecordCount>10);
-
+  BtnPgUpPozycje.Enabled:=(ZPozycjeNoty.RecordCount>6);
+  BtnPgDownPozycje.Enabled:=(ZPozycjeNoty.RecordCount>6);
 
   ZListaWazen.Close;
   ZListaWazen.ParamByName('deviceid').Value := Config.sDeviceId;
   ZListaWazen.Open;
-  BtnPgUpLista.Enabled:=(ZListaWazen.RecordCount>10);
-  BtnPgDownLista.Enabled:=(ZListaWazen.RecordCount>10);
+  BtnPgUpLista.Enabled:=(ZListaWazen.RecordCount>5);
+  BtnPgDownLista.Enabled:=(ZListaWazen.RecordCount>5);
+    _debug.loglx(L_INFO, 'EkranGlowny', 'RefreshGrd', 'End');
 end;
 
 procedure TFormEkranGlowny.BtnWylogujClick(Sender: TObject);
@@ -302,11 +325,13 @@ begin
   begin
     BtnZakonczNoteClick(Sender);
   end;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'BtnWylogujClick', 'Wylogowanie');
   Close;
 end;
 
 procedure TFormEkranGlowny.BtnZakonczNoteClick(Sender: TObject);
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'BtnZakonczNoteClick', 'Begin');
   NumerNoty := '';
   NotaWczytana := False;
   KodWazenia := '';
@@ -324,6 +349,7 @@ begin
   LblSamochod.Caption := '';
   LblIloscPoz.Caption := '';
   LblIloscNoty.Caption := '';
+  _debug.loglx(L_INFO, 'EkranGlowny', 'BtnZakonczNoteClick', 'End');
 end;
 
 procedure TFormEkranGlowny.BtnSkoraZwyklaClick(Sender: TObject);
@@ -366,6 +392,7 @@ var
   Weight: Double;
 
 begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Begin');
   // Create socket
   ClientSocket := fpSocket(AF_INET, SOCK_STREAM, 0);
 
@@ -378,7 +405,8 @@ begin
   // Connect to server
   if fpConnect(ClientSocket, @ServerAddr, SizeOf(ServerAddr)) <> 0 then
   begin
-    ShowMessage('Błąd połączenia ze wskaźnikiem!.');
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Błąd połączenia ze wskaźnikiem!');
+    ShowMessage('Błąd połączenia ze wskaźnikiem!');
     Exit;
   end;
 
@@ -387,6 +415,7 @@ begin
   BytesSent := fpSend(ClientSocket, PChar(Data), Length(Data), 0);
   if BytesSent < 0 then
   begin
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Błąd odpytytania wskaźnika!');
     ShowMessage('Błąd odpytywania wskaźnika!');
     Exit;
   end;
@@ -395,6 +424,7 @@ begin
   BytesReceived := fpRecv(ClientSocket, @Buffer, SizeOf(Buffer), 0);
   if BytesReceived < 0 then
   begin
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Błąd odczytu danych (1) ze wskaźnika');
     ShowMessage('Błąd odczytu danych (1) z wskaźnika!');
     Exit;
   end
@@ -407,6 +437,7 @@ begin
   BytesReceived2 := fpRecv(ClientSocket, @Buffer2, SizeOf(Buffer), 0);
   if BytesReceived2 < 0 then
   begin
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Błąd odczytu danych (2) ze wskaźnika');
     ShowMessage('Błąd odczytu danych (2) z wskaźnika!');
     Exit;
   end
@@ -418,10 +449,15 @@ begin
   // Close socket
   CloseSocket(ClientSocket);
 
+  _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase recived:', Trim(Buffer));
   if Pos('kg', Buffer2) > 0 then
   begin
-    WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
+
+
     WeightString := (Trim(Copy(Buffer2, 4, 12)));
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase cut:', Trim(Buffer));
+
+    WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
     DecimalSeparator := '.';
     if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
     Weight := StrToFloat(WeightString);
@@ -434,6 +470,7 @@ begin
     ShowMessage('Otrzymano niepoprawne dane ze wskaźnika!');
     Result := 0;
   end;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'End');
 end;
 
 procedure TFormEkranGlowny.BtnStornoClick(Sender: TObject);
@@ -502,6 +539,7 @@ begin
   Form := TFormEkranGlowny.Create(Application);
   Form.OprId := AOprId;
   Form.Label1.Caption := 'Zalogowany jako: ' + AOprNazwa + ', ' + IntToStr(AOprId);
+  _debug.loglx(L_INFO, 'EkranGlowny', 'Execute', 'Create form');
   Form.ShowModal;
   Result := True;
   Form.Free;

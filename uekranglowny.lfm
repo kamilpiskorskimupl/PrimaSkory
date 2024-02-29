@@ -1,11 +1,11 @@
 object FormEkranGlowny: TFormEkranGlowny
   Left = 512
-  Height = 1024
-  Top = 54
+  Height = 1003
+  Top = 0
   Width = 1280
   BorderStyle = bsNone
   Caption = 'Prima Skóry'
-  ClientHeight = 1024
+  ClientHeight = 1003
   ClientWidth = 1280
   KeyPreview = True
   OnCreate = FormCreate
@@ -25,6 +25,7 @@ object FormEkranGlowny: TFormEkranGlowny
     Caption = 'PnlFrame'
     ClientHeight = 984
     ClientWidth = 1240
+    ParentColor = False
     TabOrder = 0
     object PnlBottomStatus: TPanel
       Left = 1
