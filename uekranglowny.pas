@@ -52,6 +52,7 @@ type
     Label8: TLabel;
     Label9: TLabel;
     Panel1: TPanel;
+    PnlBackground: TPanel;
     PnlNames1: TPanel;
     PnlValues1: TPanel;
     RadioGroup1: TGroupBox;
@@ -145,7 +146,6 @@ begin
   NotaWczytana := False;
   KodWazenia := '';
   PnlZeskanuj.Visible := True;
-
   WidokListyWazen := False;
   BtnStorno.Enabled := false;
   BtnZmianaWidoku.Caption := 'Lista ważeń';
@@ -184,15 +184,15 @@ begin
         begin
           SkanKodu();
           RefreshPnlValues();
-          if Pos('Brak', Label8.Caption) > 0 then
+          if Pos('Brak', LblIndeks.Caption) > 0 then
           begin
-            FormEkranGlowny.Color:=ClRed;
+            PnlBackground.Color:=ClRed;
             ShowMessage('Brak wybranego indeksu na nocie!');
             _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Brak wybranego indeksu na nocie!', '');
           end
           else
           begin
-            FormEkranGlowny.Color := ClDefault;
+            PnlBackground.Color := ClDefault;
             Print();
           end;
         end;
@@ -200,7 +200,7 @@ begin
       Key := 0;
       KodWazenia := '';
       RefreshGrd();
-      FormEkranGlowny.SetFocus;
+//      FormEkranGlowny.SetFocus;
     end;
   end
   else begin
@@ -217,7 +217,7 @@ begin
       Key := 0;
       WczytajNote();
       RefreshGrd();
-      FormEkranGlowny.SetFocus;
+//      FormEkranGlowny.SetFocus;
     end;
   end;
 end;
@@ -458,7 +458,9 @@ begin
     _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase cut:', Trim(Buffer));
 
     WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
-    DecimalSeparator := '.';
+        WeightString := StringReplace(WeightString, ' ', '', [rfReplaceAll, rfIgnoreCase]);
+            WeightString := StringReplace(WeightString, '.', ',', [rfReplaceAll, rfIgnoreCase]);
+    //DecimalSeparator := '.';
     if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
     Weight := StrToFloat(WeightString);
     Weight := Weight - MasaHaka;
@@ -477,6 +479,9 @@ procedure TFormEkranGlowny.BtnStornoClick(Sender: TObject);
 begin
   if ZWazeniaWAZ_ID.AsInteger > 0 then
   begin
+    if Application.MessageBox(PChar('Czy na pewno zestornować pozycję'
+      +IntToStr(ZWazeniaWAZ_ID.AsInteger)+' ?'),
+      PChar(Caption), MB_YESNO or MB_ICONQUESTION) <> IDYES then exit;
     ZStornoQuery.ParamByName('deviceid').Value := Config.sDeviceId;
     ZStornoQuery.ParamByName('wazid').Value := ZWazeniaWAZ_ID.AsInteger;
     ZStornoQuery.ExecSQL;
