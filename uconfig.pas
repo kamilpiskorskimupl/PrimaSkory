@@ -189,8 +189,6 @@ begin
   sDB_ClientCP := f.ReadString('database','client_codepage', sDB_ClientCP);
   sWskaznikIP :=  f.ReadString('network','ip_wskaznika', sWskaznikIP);
 
-  //_debug.loglx(L_INFO, 'PrimaSkory', 'TConfig', 'Restore.Read.LocalEcho');
-  //_debug.bLocalEcho := f.ReadBool('debug','local_echo', false);
   sLogPath := f.ReadString('debug','log_path','.');
   iLevel := f.ReadInteger('debug','level',iLevel);
   iMaxSize := f.ReadInteger('debug','maxsize',iMaxSize);

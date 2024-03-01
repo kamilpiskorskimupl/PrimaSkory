@@ -200,7 +200,6 @@ begin
       Key := 0;
       KodWazenia := '';
       RefreshGrd();
-//      FormEkranGlowny.SetFocus;
     end;
   end
   else begin
@@ -217,7 +216,6 @@ begin
       Key := 0;
       WczytajNote();
       RefreshGrd();
-//      FormEkranGlowny.SetFocus;
     end;
   end;
 end;
@@ -449,18 +447,17 @@ begin
   // Close socket
   CloseSocket(ClientSocket);
 
-  _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase recived:', Trim(Buffer));
+  _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase recived:', Trim(Buffer2));
   if Pos('kg', Buffer2) > 0 then
   begin
 
 
     WeightString := (Trim(Copy(Buffer2, 4, 12)));
-    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase cut:', Trim(Buffer));
+    _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase cut:', Trim(WeightString));
 
     WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
         WeightString := StringReplace(WeightString, ' ', '', [rfReplaceAll, rfIgnoreCase]);
             WeightString := StringReplace(WeightString, '.', ',', [rfReplaceAll, rfIgnoreCase]);
-    //DecimalSeparator := '.';
     if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
     Weight := StrToFloat(WeightString);
     Weight := Weight - MasaHaka;
