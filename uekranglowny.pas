@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ComCtrls, DBCtrls, Buttons, Grids, Calendar, DateTimePicker, switches,
   rxdbgrid, rxswitch, rxclock, ZDataset, LCLType, uConfig, uMVRxDBGrid,
-  character, Sockets, uDebug;
+  character, Sockets, uDebug, uVersion;
 
 type
 
@@ -34,6 +34,8 @@ type
     GbListaWazen: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
+    LblVersion: TLabel;
+    LblTrybTestowy: TLabel;
     LblNumerNoty: TLabel;
     LblOdbiorca: TLabel;
     LblSamochod: TLabel;
@@ -149,6 +151,8 @@ begin
   WidokListyWazen := False;
   BtnStorno.Enabled := false;
   BtnZmianaWidoku.Caption := 'Lista ważeń';
+  LblTrybTestowy.Visible := config.bTrybTestowy;
+  LblVersion.Caption := 'Prima Skóry, Wersja ' + uVersion.AppVersion.sVersion;
 
   BtnSkoraZwyklaClick(Sender);
 end;
@@ -390,6 +394,11 @@ var
   Weight: Double;
 
 begin
+  if config.bTrybTestowy = True then
+  begin
+    Result := 72.44;
+    Exit;
+  end;
   _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Begin');
   // Create socket
   ClientSocket := fpSocket(AF_INET, SOCK_STREAM, 0);

@@ -41,6 +41,7 @@ type
     iMaxSize : Integer;
     bDebugZeos : Boolean;
     sLogPath : String;
+    bTrybTestowy: Boolean;
 
     //Language
     sDictionaryFile  : String;
@@ -140,6 +141,7 @@ begin
   iLevel := L_ERR;
   iMaxSize := 10*1024*1024;
   sLogPath := '';
+  bTrybTestowy := False;
 
   sDB_Server := 'LOCALHOST\SQL2014';
   iDB_Port := 0;
@@ -190,6 +192,7 @@ begin
   sWskaznikIP :=  f.ReadString('network','ip_wskaznika', sWskaznikIP);
 
   sLogPath := f.ReadString('debug','log_path','.');
+  bTrybTestowy := f.ReadBool('debug','tryb_testowy', false);
   iLevel := f.ReadInteger('debug','level',iLevel);
   iMaxSize := f.ReadInteger('debug','maxsize',iMaxSize);
   bDebugZeos := f.ReadBool('debug','debug_zeos', false);
@@ -233,6 +236,7 @@ begin
   f.WriteString('network','ip_wskaznika', sWskaznikIP);
 
   f.WriteString('debug','log_path',sLogPath);
+  f.WriteBool('debug', 'tryb_testowy', bTrybTestowy);
   f.WriteBool('debug','local_echo',_debug.bLocalEcho);
   f.WriteInteger('debug','level',_debug.level);
   f.WriteInteger('debug','maxsize',_debug.maxSize);
