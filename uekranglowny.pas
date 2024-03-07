@@ -107,6 +107,8 @@ type
     function PobierzMase(): Double;
     procedure BtnPgUpPozycjeClick(Sender: TObject);
     procedure BtnPgDownPozycjeClick(Sender: TObject);
+    procedure BtnPgUpListaClick(Sender: TObject);
+    procedure BtnPgDownListaClick(Sender: TObject);
     procedure BtnSkoraKoszernaClick(Sender: TObject);
     procedure BtnSkoraZwyklaClick(Sender: TObject);
     procedure BtnZakonczNoteClick(Sender: TObject);
@@ -198,6 +200,7 @@ begin
           begin
             PnlBackground.Color := ClDefault;
             Print();
+            RefreshPnlValues();
           end;
         end;
       end;
@@ -377,11 +380,6 @@ begin
   ZRodzajSkory.ExecSQL;
 end;
 
-procedure TFormEkranGlowny.BtnPgUpPozycjeClick(Sender: TObject);
-begin
-  GridPageUp(RxPozycjeNoty);
-end;
-
 function TFormEkranGlowny.PobierzMase(): Double;
 var
   ClientSocket: TSocket;
@@ -414,6 +412,7 @@ begin
   begin
     _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase', 'Błąd połączenia ze wskaźnikiem!');
     ShowMessage('Błąd połączenia ze wskaźnikiem!');
+;
     Exit;
   end;
 
@@ -517,10 +516,24 @@ begin
   end;
 end;
 
+procedure TFormEkranGlowny.BtnPgUpPozycjeClick(Sender: TObject);
+begin
+  GridPageUp(RxPozycjeNoty);
+end;
 
 procedure TFormEkranGlowny.BtnPgDownPozycjeClick(Sender: TObject);
 begin
   GridPageDown(RxPozycjeNoty);
+end;
+
+procedure TFormEkranGlowny.BtnPgUpListaClick(Sender: TObject);
+begin
+  GridPageUp(RxListaWazen);
+end;
+
+procedure TFormEkranGlowny.BtnPgDownListaClick(Sender: TObject);
+begin
+  GridPageDown(RxListaWazen);
 end;
 
 procedure TFormEkranGlowny.GridPageUp(AGrid: TMVRxDBGrid);

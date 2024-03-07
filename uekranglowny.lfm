@@ -501,7 +501,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Caption = '↑'
                 Enabled = False
                 Font.Height = -40
-                OnClick = BtnPgUpPozycjeClick
+                OnClick = BtnPgUpListaClick
                 ParentFont = False
               end
               object BtnPgDownPozycje: TSpeedButton
@@ -513,7 +513,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Caption = '↓'
                 Enabled = False
                 Font.Height = -40
-                OnClick = BtnPgDownPozycjeClick
+                OnClick = BtnPgDownListaClick
                 ParentFont = False
               end
             end
@@ -622,7 +622,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Caption = '↑'
                 Enabled = False
                 Font.Height = -40
-                OnClick = BtnPgUpPozycjeClick
+                OnClick = BtnPgUpListaClick
                 ParentFont = False
               end
               object BtnPgDownLista: TSpeedButton
@@ -634,7 +634,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Caption = '↓'
                 Enabled = False
                 Font.Height = -40
-                OnClick = BtnPgDownPozycjeClick
+                OnClick = BtnPgDownListaClick
                 ParentFont = False
               end
             end
@@ -787,7 +787,6 @@ object FormEkranGlowny: TFormEkranGlowny
         Height = 200
         Top = 384
         Width = 600
-        Align = alClient
         Anchors = []
         Caption = 'Zeskanuj notę aby rozpocząć pracę...'
         Font.Height = -27
