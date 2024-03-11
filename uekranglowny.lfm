@@ -180,6 +180,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 10
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -190,6 +191,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 38
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -200,6 +202,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 66
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -210,6 +213,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 94
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -328,6 +332,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 10
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -338,6 +343,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 38
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -348,6 +354,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 66
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -358,6 +365,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 94
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -368,6 +376,7 @@ object FormEkranGlowny: TFormEkranGlowny
               Height = 23
               Top = 122
               Width = 380
+              Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
               ParentColor = False
@@ -1270,5 +1279,37 @@ object FormEkranGlowny: TFormEkranGlowny
         Name = 'wazid'
         ParamType = ptUnknown
       end>
+  end
+  object ZStatusWazenia: TZReadOnlyQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'SELECT ISNULL(TD_VALUE, ''BRAK'') AS VALUE FROM TEMP_DATA'
+      'WHERE TD_DEVICE = :deviceid'
+      'AND TD_DATA = ''STATUS_WAZENIA'''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    Left = 192
+    Top = 512
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'deviceid'
+        ParamType = ptUnknown
+      end>
+    object ZStatusWazeniaVALUE: TStringField
+      FieldKind = fkData
+      FieldName = 'VALUE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
   end
 end

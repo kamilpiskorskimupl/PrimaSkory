@@ -27,7 +27,9 @@ type
     sLauncher_Ini_Path : String;
     bChangeAction : Boolean;
 
-    // Modules
+    // Settings
+
+    sPrefixNrNoty : String;
 
     //Network
     sIpAddress : String;
@@ -132,6 +134,8 @@ begin
   sLauncher_Path := 'desktoplauncher.exe';
   sLauncher_Ini_Path := 'desktop-launcher.ini';
 
+  sPrefixNrNoty := '';
+
   sIpAddress := '0.0.0.0';
   sWskaznikIp := '0.0.0.0';
   sPort := '1045';
@@ -191,6 +195,8 @@ begin
   sDB_ClientCP := f.ReadString('database','client_codepage', sDB_ClientCP);
   sWskaznikIP :=  f.ReadString('network','ip_wskaznika', sWskaznikIP);
 
+  sPrefixNrNoty:= f.ReadString('settings', 'prefix_noty', sPrefixNrNoty);
+
   sLogPath := f.ReadString('debug','log_path','.');
   bTrybTestowy := f.ReadBool('debug','tryb_testowy', false);
   iLevel := f.ReadInteger('debug','level',iLevel);
@@ -235,12 +241,16 @@ begin
   f.WriteString('database','client_codepage',sDB_ClientCP);
   f.WriteString('network','ip_wskaznika', sWskaznikIP);
 
+  f.WriteString('settings', 'prefix_noty', sPrefixNrNoty);
+
   f.WriteString('debug','log_path',sLogPath);
   f.WriteBool('debug', 'tryb_testowy', bTrybTestowy);
   f.WriteBool('debug','local_echo',_debug.bLocalEcho);
   f.WriteInteger('debug','level',_debug.level);
   f.WriteInteger('debug','maxsize',_debug.maxSize);
   f.WriteBool('debug','debug_zeos',bDebugZeos);
+
+
 
   f.Free;
   sFile_Store := fname;

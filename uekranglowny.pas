@@ -79,6 +79,7 @@ type
     ZListaWazenWAZ_NR_UBOJOWY: TLongintField;
     ZLoadSettings: TZReadOnlyQuery;
     ZLoadTempData: TZReadOnlyQuery;
+    ZStatusWazenia: TZReadOnlyQuery;
     ZLoadTempVal: TZReadOnlyQuery;
     ZListaWazen: TZReadOnlyQuery;
     ZPozycjeNotyZLC_ILOSC_WAZEN: TLongintField;
@@ -86,6 +87,7 @@ type
     ZPozycjeNotyZLC_ILOSC_ZREALIZOWANA_MAS: TFloatField;
     ZPozycjeNotyZLC_KOD_ASORTYMENTU: TStringField;
     ZPozycjeNotyZLC_NAZWA_ASORTYMENTU: TStringField;
+    ZStatusWazeniaVALUE: TStringField;
     ZStornoQuery: TZQuery;
     ZWazeniaWAZ_ID: TLongintField;
     ZWazeniaWAZ_INDEKS: TStringField;
@@ -120,6 +122,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure WczytajNote();
     procedure SkanKodu();
+    procedure SprawdzIndeks();
     procedure Print();
     procedure RefreshPnlValues();
     procedure RefreshGrd();
@@ -132,6 +135,7 @@ type
     MasaHaka: Double;
     MasaZwazona: Double;
     WidokListyWazen: Boolean;
+    StanSkanuKodu: String;
   public
     class function Execute(AOprId: Integer; AOprNazwa: String): Boolean;
   end;
@@ -145,6 +149,8 @@ implementation
 
 procedure TFormEkranGlowny.FormCreate(Sender: TObject);
 begin
+  PnlZeskanuj.Align := alClient;
+
   BoundsRect := Screen.MonitorFromWindow(Handle).BoundsRect;
   NumerNoty := '';
   NotaWczytana := False;
@@ -153,7 +159,6 @@ begin
   WidokListyWazen := False;
   BtnStorno.Enabled := false;
   BtnZmianaWidoku.Caption := 'Lista ważeń';
-  LblTrybTestowy.Visible := config.bTrybTestowy;
   LblVersion.Caption := 'Prima Skóry, Wersja ' + uVersion.AppVersion.sVersion;
 
   BtnSkoraZwyklaClick(Sender);
@@ -178,7 +183,7 @@ begin
     if Key = VK_RETURN then
     begin
       _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Kod zeskanowany', KodWazenia);
-      if Length(KodWazenia) > 10 then
+      if Length(KodWazenia) <> 9 then
       begin
         ShowMessage('Niepoprawny kod!');
         _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Niepoprawny kod!', KodWazenia);
@@ -190,22 +195,49 @@ begin
         begin
           SkanKodu();
           RefreshPnlValues();
-          if Pos('Brak', LblIndeks.Caption) > 0 then
+          SprawdzIndeks();
+          if StanSkanuKodu = 'INDEKS_NULL' then
           begin
             PnlBackground.Color:=ClRed;
-            ShowMessage('Brak wybranego indeksu na nocie!');
-            _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Brak wybranego indeksu na nocie!', '');
+            _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Indeks nie istnieje!', '');
+            ShowMessage('Indeks nie istnieje!')
           end
-          else
+          else if StanSkanuKodu = 'INDEKS_NIE_NA_NOCIE' then
+          begin
+            PnlBackground.Color:=ClRed;
+            _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Brak wybranego indeksu na nocie!', '');
+            ShowMessage('Brak wybranego indeksu na nocie!')
+          end
+          else if StanSkanuKodu = 'BRAK' then
+          begin
+            PnlBackground.Color:=ClRed;
+            _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Błąd weryfikacji indeksu! Zeskanuj ponownie.', '');
+            ShowMessage('Błąd weryfikacji indeksu!')
+          end
+          else if StanSkanuKodu = 'OK' then
           begin
             PnlBackground.Color := ClDefault;
             Print();
-            RefreshPnlValues();
           end;
+
+          //RefreshPnlValues();
+          //if Pos('Brak', LblIndeks.Caption) > 0 then
+          //begin
+          //  PnlBackground.Color:=ClRed;
+          //  ShowMessage('Brak wybranego indeksu na nocie!');
+          //  _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Brak wybranego indeksu na nocie!', '');
+          //end
+          //else
+          //begin
+          //  PnlBackground.Color := ClDefault;
+          //  Print();
+          //  RefreshPnlValues();
+          //end;
         end;
       end;
       Key := 0;
       KodWazenia := '';
+      RefreshPnlValues();
       RefreshGrd();
     end;
   end
@@ -213,7 +245,7 @@ begin
     if Key = VK_RETURN then
     begin
       _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Nota zeskanowana:', NumerNoty);
-      if Pos('OTE', NumerNoty) = 0 then
+      if Pos(Config.sPrefixNrNoty, NumerNoty) = 0 then
       begin
         ShowMessage('Niepoprawny numer noty!');
         _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Niepoprawny numer noty!', NumerNoty);
@@ -271,6 +303,16 @@ begin
   ZScanCode.ParamByName('masa').Value := MasaZwazona;
   ZScanCode.ExecSQL;
   _debug.loglx(L_INFO, 'EkranGlowny', 'SkanKodu', 'End');
+end;
+
+procedure TFormEkranGlowny.SprawdzIndeks();
+begin
+  _debug.loglx(L_INFO, 'EkranGlowny', 'SprawdzIndeks', 'Begin');
+  ZStatusWazenia.ParamByName('deviceid').Value := Config.sDeviceId;
+  ZStatusWazenia.Open;
+  StanSkanuKodu := ZStatusWazeniaVALUE.AsString;
+  ZStatusWazenia.Close;
+  _debug.loglx(L_INFO, 'EkranGlowny', 'SprawdzIndeks', 'End');
 end;
 
 procedure TFormEkranGlowny.Print();
@@ -345,15 +387,15 @@ begin
 
   ZResetTempVal.ExecSQL;
   ZZakonczNoteTempData.ExecSQL;
-  LblNumerUbojowy.Caption := '';
-  LblDataUboju.Caption := '';
-  LblNumerNoty.Caption := '';
-  LblIndeks.Caption := '';
-  LblTowar.Caption := '';
-  LblOdbiorca.Caption := '';
-  LblSamochod.Caption := '';
-  LblIloscPoz.Caption := '';
-  LblIloscNoty.Caption := '';
+  LblNumerUbojowy.Caption := ' ';
+  LblDataUboju.Caption := ' ';
+  LblNumerNoty.Caption := ' ';
+  LblIndeks.Caption := ' ';
+  LblTowar.Caption := ' ';
+  LblOdbiorca.Caption := ' ';
+  LblSamochod.Caption := ' ';
+  LblIloscPoz.Caption := ' ';
+  LblIloscNoty.Caption := ' ';
   _debug.loglx(L_INFO, 'EkranGlowny', 'BtnZakonczNoteClick', 'End');
 end;
 
@@ -563,6 +605,17 @@ begin
   Form := TFormEkranGlowny.Create(Application);
   Form.OprId := AOprId;
   Form.Label1.Caption := 'Zalogowany jako: ' + AOprNazwa + ', ' + IntToStr(AOprId);
+   if config.bTrybTestowy = True then
+  begin
+    Form.LblTrybTestowy.Visible := true;
+    Form.WindowState:=wsNormal;
+    Form.BorderStyle := bsSizeable;
+  end else
+  begin
+    Form.LblTrybTestowy.Visible := false;
+    Form.WindowState := wsFullScreen;
+
+  end;
   _debug.loglx(L_INFO, 'EkranGlowny', 'Execute', 'Create form');
   Form.ShowModal;
   Result := True;
