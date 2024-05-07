@@ -245,7 +245,7 @@ begin
     if Key = VK_RETURN then
     begin
       _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Nota zeskanowana:', NumerNoty);
-      if Pos(Config.sPrefixNrNoty, NumerNoty) = 0 then
+      if Length(NumerNoty) <> 10 then
       begin
         ShowMessage('Niepoprawny numer noty!');
         _debug.loglx(L_INFO, 'EkranGlowny', 'FormKeyDown: Niepoprawny numer noty!', NumerNoty);
