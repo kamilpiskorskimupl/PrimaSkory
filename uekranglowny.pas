@@ -502,12 +502,13 @@ begin
   begin
 
 
-    WeightString := (Trim(Copy(Buffer2, 4, 12)));
+    WeightString := (Trim(Copy(Buffer2, Pos('kg', Buffer2)-8, 10)));
     _debug.loglx(L_INFO, 'EkranGlowny', 'PobierzMase cut:', Trim(WeightString));
 
-    WeightString := StringReplace(WeightString, 'kg', '', [rfReplaceAll, rfIgnoreCase]);
-        WeightString := StringReplace(WeightString, ' ', '', [rfReplaceAll, rfIgnoreCase]);
-            WeightString := StringReplace(WeightString, '.', ',', [rfReplaceAll, rfIgnoreCase]);
+    WeightString := StringReplace(WeightString, 'k', '', [rfReplaceAll, rfIgnoreCase]);
+    WeightString := StringReplace(WeightString, 'g', '', [rfReplaceAll, rfIgnoreCase]);
+    WeightString := StringReplace(WeightString, ' ', '', [rfReplaceAll, rfIgnoreCase]);
+    WeightString := StringReplace(WeightString, '.', ',', [rfReplaceAll, rfIgnoreCase]);
     if WeightString = '0.0' then ShowMessage('Brak skóry na wadze!');
     Weight := StrToFloat(WeightString);
     Weight := Weight - MasaHaka;
