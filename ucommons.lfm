@@ -2,21 +2,22 @@ object Commons: TCommons
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 262
-  HorizontalOffset = 1803
-  VerticalOffset = 1091
+  HorizontalOffset = 1400
+  VerticalOffset = 492
   Width = 387
   object DbWysylka: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
-    ClientCodepage = 'UTF8'
+    ClientCodepage = 'UTF-8'
     Properties.Strings = (
-      'codepage=UTF8'
+      'codepage=UTF-8'
       'AutoEncodeStrings='
+      'RawStringEncoding=DB_CP'
     )
-    Port = 0
+    DisableSavepoints = False
+    Port = 30011
     Database = 'WYSYLKA_SKOR'
     User = 'sa'
-    Protocol = 'FreeTDS_MsSQL>=2005'
+    Protocol = 'mssql'
     LibraryLocation = 'libsybdb.so.5.1.0'
     Left = 64
     Top = 40
@@ -30,5 +31,13 @@ object Commons: TCommons
     Params = <>
     Left = 64
     Top = 120
+  end
+  object ZSQLMonitor1: TZSQLMonitor
+    Active = True
+    AutoSave = True
+    FileName = 'debugz.log'
+    MaxTraceCount = 100
+    Left = 209
+    Top = 69
   end
 end

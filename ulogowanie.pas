@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  uMVRxDBGrid, ZDataset, DBGrids, Buttons, uEkranGlowny;
+  uMVRxDBGrid, ZDataset, DBGrids, Buttons, uEkranGlowny, uDebug, uConfig;
 
 type
 
@@ -68,6 +68,7 @@ begin
   RxLoginList.DefaultRowHeight:=trunc(RxLoginList.Height/10);
   BtnLeftPgUp.Enabled:=(ZLiteraList.RecordCount>10);
   BtnLeftPgDown.Enabled:=(ZLiteraList.RecordCount>10);
+  _debug.loglx(L_INFO, 'Logowanie', 'DeviceID', Config.sDeviceId);
 end;
 
 procedure TFormLogowanie.FormDestroy(Sender: TObject);

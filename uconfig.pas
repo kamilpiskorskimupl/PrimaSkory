@@ -58,11 +58,10 @@ type
     sDB_Protocol,
     sDB_Library,
     sDB_CtrlsCP,
-    sDB_ClientCP : String;
+    sDB_ClientCP: String;
 
     iDB_Port : Integer;
 
-    bDB_AutoEncodeStrings : Boolean;
     property GlobalDir : String read PGlobalDir;
     property LocalDir : String read PLocalDir;
 
@@ -160,8 +159,6 @@ begin
   sDictionaryFile := 'polish.lng';
   sSelectedLanguage := 'POLISH';
   sLangCode := 'pl';
-
-  bDB_AutoEncodeStrings := true;
 end;
 
 procedure TConfig.Restore(fname : String);
@@ -173,14 +170,15 @@ begin
   if Length(fname) < 1 then raise Exception.Create('empty configuration file name');
 
   f := TIniFile.Create(fname);
-  bHideStart := f.ReadBool('program', 'hide_start', bHideStart);
-  sDeviceId := f.ReadString('program', 'device_id', sDeviceId);
+  bHideStart   := f.ReadBool('program', 'hide_start', bHideStart);
+  sDeviceId    := f.ReadString('program', 'device_id', sDeviceId);
   sLauncher_Path := f.ReadString('program', 'launcher_path', sLauncher_Path);
   sLauncher_Ini_Path := f.ReadString('program', 'launcher_ini', sLauncher_Ini_Path);
   bChangeAction := f.ReadBool('program', 'changeaction', bChangeAction);
+
   sDictionaryFile := f.ReadString('language', 'dictionaryfile', sDictionaryFile);
   sSelectedLanguage := f.ReadString('language', 'selected_language', sSelectedLanguage);
-  sLangCode := f.ReadString('language','lang_code',sLangCode);
+  sLangCode    := f.ReadString('language','lang_code',sLangCode);
 
   sDB_Server   := f.ReadString('database','server'   ,sDB_Server);
   iDB_Port     := f.ReadInteger('database', 'port', iDB_Port);
@@ -190,18 +188,18 @@ begin
   sDB_Password := dsDecryptString(AppVersion.sCopyright, sEncrypted);
   sDB_Protocol := f.ReadString('database','protocol', sDB_Protocol);
   sDB_Library  := f.ReadString('database','library' , sDB_Library);
-  bDB_AutoEncodeStrings := f.ReadBool('database','auto_encode_strings', bDB_AutoEncodeStrings);
   sDB_CtrlsCP  := f.ReadString('database','controls_codepage', sDB_CtrlsCP);
   sDB_ClientCP := f.ReadString('database','client_codepage', sDB_ClientCP);
-  sWskaznikIP :=  f.ReadString('network','ip_wskaznika', sWskaznikIP);
+
+  sWskaznikIP  := f.ReadString('network','ip_wskaznika', sWskaznikIP);
 
   sPrefixNrNoty:= f.ReadString('settings', 'prefix_noty', sPrefixNrNoty);
 
-  sLogPath := f.ReadString('debug','log_path','.');
+  sLogPath     := f.ReadString('debug','log_path','.');
   bTrybTestowy := f.ReadBool('debug','tryb_testowy', false);
-  iLevel := f.ReadInteger('debug','level',iLevel);
-  iMaxSize := f.ReadInteger('debug','maxsize',iMaxSize);
-  bDebugZeos := f.ReadBool('debug','debug_zeos', false);
+  iLevel       := f.ReadInteger('debug','level',iLevel);
+  iMaxSize     := f.ReadInteger('debug','maxsize',iMaxSize);
+  bDebugZeos   := f.ReadBool('debug','debug_zeos', false);
 
   f.Free;
 
@@ -236,7 +234,6 @@ begin
   f.WriteString('database','password', sEncrypted);
   f.WriteString('database','protocol', sDB_Protocol);
   f.WriteString('database','library' , sDB_Library);
-  f.WriteBool('database','auto_encode_strings',bDB_AutoEncodeStrings);
   f.WriteString('database','controls_codepage',sDB_CtrlsCP);
   f.WriteString('database','client_codepage',sDB_ClientCP);
   f.WriteString('network','ip_wskaznika', sWskaznikIP);

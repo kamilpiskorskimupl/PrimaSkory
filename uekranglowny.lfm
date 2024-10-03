@@ -1,26 +1,25 @@
 object FormEkranGlowny: TFormEkranGlowny
-  Left = 512
-  Height = 1024
-  Top = 0
-  Width = 1280
+  Left = 548
+  Height = 1022
+  Top = 127
+  Width = 1289
   BorderStyle = bsNone
   Caption = 'Prima Skóry'
-  ClientHeight = 1024
-  ClientWidth = 1280
+  ClientHeight = 1022
+  ClientWidth = 1289
   KeyPreview = True
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
-  LCLVersion = '2.0.12.0'
-  WindowState = wsFullScreen
+  LCLVersion = '3.4.0.0'
   object PnlBackground: TPanel
     Left = 0
-    Height = 1024
+    Height = 1022
     Top = 0
-    Width = 1280
+    Width = 1289
     Align = alClient
-    ClientHeight = 1024
-    ClientWidth = 1280
+    ClientHeight = 1022
+    ClientWidth = 1289
     ParentColor = False
     TabOrder = 0
     object PnlFrame: TPanel
@@ -111,10 +110,10 @@ object FormEkranGlowny: TFormEkranGlowny
             ClientWidth = 128
             TabOrder = 1
             object Label2: TLabel
-              Left = 10
-              Height = 23
-              Top = 10
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 11
+              Width = 106
               Alignment = taRightJustify
               Caption = 'Nota:'
               Constraints.MinHeight = 23
@@ -123,10 +122,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label3: TLabel
-              Left = 10
-              Height = 23
-              Top = 38
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 41
+              Width = 106
               Alignment = taRightJustify
               Caption = 'Odbiorca:'
               Constraints.MinHeight = 23
@@ -135,10 +134,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label4: TLabel
-              Left = 10
-              Height = 23
-              Top = 66
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 71
+              Width = 106
               Alignment = taRightJustify
               Caption = 'Samochód:'
               Constraints.MinHeight = 23
@@ -147,10 +146,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label5: TLabel
-              Left = 10
-              Height = 23
-              Top = 94
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 101
+              Width = 106
               Alignment = taRightJustify
               Caption = 'Ilość noty:'
               Constraints.MinHeight = 23
@@ -176,10 +175,10 @@ object FormEkranGlowny: TFormEkranGlowny
             ClientWidth = 400
             TabOrder = 0
             object LblNumerNoty: TLabel
-              Left = 10
-              Height = 23
-              Top = 10
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 11
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -187,10 +186,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblOdbiorca: TLabel
-              Left = 10
-              Height = 23
-              Top = 38
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 41
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -198,10 +197,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblSamochod: TLabel
-              Left = 10
-              Height = 23
-              Top = 66
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 71
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -209,10 +208,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblIloscNoty: TLabel
-              Left = 10
-              Height = 23
-              Top = 94
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 101
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -220,10 +219,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblTrybTestowy: TLabel
-              Left = 10
-              Height = 23
-              Top = 122
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 131
+              Width = 378
               Alignment = taRightJustify
               Caption = 'TRYB TESTOWY, WAGA NIEAKTYWNA'
               Color = clRed
@@ -251,10 +250,10 @@ object FormEkranGlowny: TFormEkranGlowny
             ClientWidth = 128
             TabOrder = 2
             object Label6: TLabel
-              Left = 10
-              Height = 23
-              Top = 10
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 11
+              Width = 107
               Alignment = taRightJustify
               Caption = 'Nr ubojowy:'
               Constraints.MinHeight = 23
@@ -263,10 +262,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label7: TLabel
-              Left = 10
-              Height = 23
-              Top = 38
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 41
+              Width = 107
               Alignment = taRightJustify
               Caption = 'Data uboju:'
               Constraints.MinHeight = 23
@@ -275,10 +274,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label8: TLabel
-              Left = 10
-              Height = 23
-              Top = 66
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 71
+              Width = 107
               Alignment = taRightJustify
               Caption = 'Indeks:'
               Constraints.MinHeight = 23
@@ -287,10 +286,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label9: TLabel
-              Left = 10
-              Height = 23
-              Top = 94
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 101
+              Width = 107
               Alignment = taRightJustify
               Caption = 'Towar:'
               Constraints.MinHeight = 23
@@ -299,10 +298,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object Label10: TLabel
-              Left = 10
-              Height = 23
-              Top = 122
-              Width = 108
+              Left = 11
+              Height = 25
+              Top = 131
+              Width = 107
               Alignment = taRightJustify
               Caption = 'Ilość poz.:'
               Constraints.MinHeight = 23
@@ -328,10 +327,10 @@ object FormEkranGlowny: TFormEkranGlowny
             ClientWidth = 400
             TabOrder = 3
             object LblNumerUbojowy: TLabel
-              Left = 10
-              Height = 23
-              Top = 10
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 11
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -339,10 +338,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblDataUboju: TLabel
-              Left = 10
-              Height = 23
-              Top = 38
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 41
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -350,10 +349,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblIndeks: TLabel
-              Left = 10
-              Height = 23
-              Top = 66
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 71
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -361,10 +360,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblTowar: TLabel
-              Left = 10
-              Height = 23
-              Top = 94
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 101
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -372,10 +371,10 @@ object FormEkranGlowny: TFormEkranGlowny
               ParentFont = False
             end
             object LblIloscPoz: TLabel
-              Left = 10
-              Height = 23
-              Top = 122
-              Width = 380
+              Left = 11
+              Height = 25
+              Top = 131
+              Width = 378
               Caption = ' '
               Constraints.MinHeight = 23
               Font.Height = -20
@@ -410,18 +409,19 @@ object FormEkranGlowny: TFormEkranGlowny
               Width = 1232
               Align = alClient
               Caption = 'Pozycje noty:'
-              ClientHeight = 562
-              ClientWidth = 1228
+              ClientHeight = 563
+              ClientWidth = 1230
               Color = 15453359
               Font.Height = -27
+              ParentBackground = False
               ParentColor = False
               ParentFont = False
               TabOrder = 0
               object RxPozycjeNoty: TMVRxDBGrid
                 Left = 0
-                Height = 442
+                Height = 443
                 Top = 60
-                Width = 1228
+                Width = 1230
                 TitleButtons = False
                 AutoSort = True
                 KeyStrokes = <                
@@ -486,7 +486,6 @@ object FormEkranGlowny: TFormEkranGlowny
                 DrawFullLine = False
                 FocusColor = clRed
                 SelectedColor = clHighlight
-                GridLineStyle = psSolid
                 DataSource = DSPozycjeNoty
                 DefaultRowHeight = 40
                 DefaultColWidth = 64
@@ -505,7 +504,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Left = 0
                 Height = 60
                 Top = 0
-                Width = 1228
+                Width = 1230
                 Align = alTop
                 Caption = '↑'
                 Enabled = False
@@ -516,8 +515,8 @@ object FormEkranGlowny: TFormEkranGlowny
               object BtnPgDownPozycje: TSpeedButton
                 Left = 0
                 Height = 60
-                Top = 502
-                Width = 1228
+                Top = 503
+                Width = 1230
                 Align = alBottom
                 Caption = '↓'
                 Enabled = False
@@ -533,19 +532,20 @@ object FormEkranGlowny: TFormEkranGlowny
               Width = 1232
               Align = alClient
               Caption = 'Lista Ważeń'
-              ClientHeight = 562
-              ClientWidth = 1228
+              ClientHeight = 563
+              ClientWidth = 1230
               Color = 10020863
               Font.Height = -27
+              ParentBackground = False
               ParentColor = False
               ParentFont = False
               TabOrder = 1
               Visible = False
               object RxListaWazen: TMVRxDBGrid
                 Left = 0
-                Height = 442
+                Height = 443
                 Top = 60
-                Width = 1228
+                Width = 1230
                 TitleButtons = False
                 AutoSort = True
                 KeyStrokes = <                
@@ -610,7 +610,6 @@ object FormEkranGlowny: TFormEkranGlowny
                 DrawFullLine = False
                 FocusColor = clRed
                 SelectedColor = clHighlight
-                GridLineStyle = psSolid
                 DataSource = DSListaWazen
                 DefaultRowHeight = 60
                 Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
@@ -626,7 +625,7 @@ object FormEkranGlowny: TFormEkranGlowny
                 Left = 0
                 Height = 60
                 Top = 0
-                Width = 1228
+                Width = 1230
                 Align = alTop
                 Caption = '↑'
                 Enabled = False
@@ -637,8 +636,8 @@ object FormEkranGlowny: TFormEkranGlowny
               object BtnPgDownLista: TSpeedButton
                 Left = 0
                 Height = 60
-                Top = 502
-                Width = 1228
+                Top = 503
+                Width = 1230
                 Align = alBottom
                 Caption = '↓'
                 Enabled = False
@@ -677,14 +676,14 @@ object FormEkranGlowny: TFormEkranGlowny
                 Width = 526
                 Align = alTop
                 Caption = 'Rodzaj skóry'
-                ClientHeight = 80
-                ClientWidth = 522
+                ClientHeight = 81
+                ClientWidth = 524
                 Font.Height = -27
                 ParentFont = False
                 TabOrder = 0
                 object BtnSkoraZwykla: TSpeedButton
                   Left = 0
-                  Height = 80
+                  Height = 81
                   Top = 0
                   Width = 250
                   Align = alLeft
@@ -695,8 +694,8 @@ object FormEkranGlowny: TFormEkranGlowny
                   OnClick = BtnSkoraZwyklaClick
                 end
                 object BtnSkoraKoszerna: TSpeedButton
-                  Left = 272
-                  Height = 80
+                  Left = 274
+                  Height = 81
                   Top = 0
                   Width = 250
                   Align = alRight
@@ -779,6 +778,7 @@ object FormEkranGlowny: TFormEkranGlowny
         ClientHeight = 36
         ClientWidth = 170
         Color = 3909887
+        ParentBackground = False
         ParentColor = False
         TabOrder = 1
         object RxClock1: TRxClock
@@ -808,7 +808,7 @@ object FormEkranGlowny: TFormEkranGlowny
       AnchorSideBottom.Control = PnlBackground
       AnchorSideBottom.Side = asrBottom
       Left = 1
-      Height = 17
+      Height = 15
       Top = 1006
       Width = 171
       Anchors = [akTop, akLeft, akBottom]
@@ -823,28 +823,30 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'code'
-        ParamType = ptUnknown
       end>
     Left = 72
     Top = 456
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'code'
-        ParamType = ptUnknown
       end>
+    object ZScanNoteRESULT: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'RESULT'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 2
+    end
   end
   object ZScanCode: TZQuery
     Connection = Commons.DbWysylka
@@ -853,37 +855,25 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'code'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'masa'
-        ParamType = ptUnknown
       end>
     Left = 192
     Top = 680
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'code'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'masa'
-        ParamType = ptUnknown
       end>
   end
   object ZLoadSettings: TZReadOnlyQuery
@@ -893,17 +883,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 72
     Top = 512
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
   end
   object ZLoadTempData: TZReadOnlyQuery
@@ -913,27 +899,19 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'oprid'
-        ParamType = ptUnknown
       end>
     Left = 72
     Top = 568
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'oprid'
-        ParamType = ptUnknown
       end>
   end
   object ZLoadTempVal: TZReadOnlyQuery
@@ -943,17 +921,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 72
     Top = 624
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     object ZLoadTempValID: TLongintField
       FieldKind = fkData
@@ -981,17 +955,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 600
     Top = 720
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     object ZPozycjeNotyZLC_KOD_ASORTYMENTU: TStringField
       DisplayLabel = 'Indeks'
@@ -1059,57 +1029,19 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'masa'
-        ParamType = ptUnknown
       end>
     Left = 856
     Top = 720
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'masa'
-        ParamType = ptUnknown
-      end>
-  end
-  object ZRodzajSkory: TZQuery
-    Connection = Commons.DbWysylka
-    SQL.Strings = (
-      'EXEC USTAW_RODZAJ_SKORY :deviceid, :rodzaj'
-    )
-    Params = <    
-      item
-        DataType = ftUnknown
-        Name = 'deviceid'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'rodzaj'
-        ParamType = ptUnknown
-      end>
-    Left = 192
-    Top = 568
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'deviceid'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
-        Name = 'rodzaj'
-        ParamType = ptUnknown
       end>
   end
   object ZResetTempVal: TZReadOnlyQuery
@@ -1119,17 +1051,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 72
     Top = 680
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     object ZLoadTempValID1: TLongintField
       FieldKind = fkData
@@ -1157,17 +1085,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 192
     Top = 624
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
   end
   object DSListaWazen: TDataSource
@@ -1182,17 +1106,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 728
     Top = 720
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     object ZWazeniaWAZ_ID: TLongintField
       FieldKind = fkData
@@ -1257,27 +1177,19 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'wazid'
-        ParamType = ptUnknown
       end>
     Left = 968
     Top = 720
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
         Name = 'wazid'
-        ParamType = ptUnknown
       end>
   end
   object ZStatusWazenia: TZReadOnlyQuery
@@ -1289,17 +1201,13 @@ object FormEkranGlowny: TFormEkranGlowny
     )
     Params = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     Left = 192
     Top = 512
     ParamData = <    
       item
-        DataType = ftUnknown
         Name = 'deviceid'
-        ParamType = ptUnknown
       end>
     object ZStatusWazeniaVALUE: TStringField
       FieldKind = fkData
@@ -1311,5 +1219,27 @@ object FormEkranGlowny: TFormEkranGlowny
       Required = False
       Size = 40
     end
+  end
+  object ZRodzajSkory: TZQuery
+    Connection = Commons.DbWysylka
+    SQL.Strings = (
+      'EXEC USTAW_RODZAJ_SKORY :deviceid, :rodzaj'
+    )
+    Params = <    
+      item
+        Name = 'deviceid'
+      end    
+      item
+        Name = 'rodzaj'
+      end>
+    Left = 192
+    Top = 568
+    ParamData = <    
+      item
+        Name = 'deviceid'
+      end    
+      item
+        Name = 'rodzaj'
+      end>
   end
 end

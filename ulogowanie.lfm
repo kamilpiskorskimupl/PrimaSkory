@@ -1,56 +1,56 @@
 object FormLogowanie: TFormLogowanie
-  Left = 516
-  Height = 1024
-  Top = 144
-  Width = 1280
+  Left = 0
+  Height = 1363
+  Top = 0
+  Width = 3440
   Caption = 'Prima - Logowanie'
-  ClientHeight = 1024
-  ClientWidth = 1280
+  ClientHeight = 1363
+  ClientWidth = 3440
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '3.4.0.0'
   WindowState = wsMaximized
   object PnlFrame: TPanel
     Left = 20
-    Height = 984
+    Height = 1323
     Top = 20
-    Width = 1240
+    Width = 3400
     Align = alClient
     BorderSpacing.Left = 20
     BorderSpacing.Top = 20
     BorderSpacing.Right = 20
     BorderSpacing.Bottom = 20
     Caption = 'PnlFrame'
-    ClientHeight = 984
-    ClientWidth = 1240
+    ClientHeight = 1323
+    ClientWidth = 3400
     TabOrder = 0
     object PnlLeft: TPanel
       Left = 1
-      Height = 902
+      Height = 1241
       Top = 1
       Width = 450
       Align = alLeft
-      ClientHeight = 902
+      ClientHeight = 1241
       ClientWidth = 450
       TabOrder = 0
       object GbLeft: TGroupBox
         Left = 1
-        Height = 900
+        Height = 1239
         Top = 1
         Width = 448
         Align = alClient
         Caption = 'Wybierz pierwszą literę nazwiska:'
-        ClientHeight = 865
-        ClientWidth = 444
+        ClientHeight = 1205
+        ClientWidth = 446
         Font.Height = -27
         ParentFont = False
         TabOrder = 0
         object RxLiteraList: TMVRxDBGrid
           Left = 0
-          Height = 745
+          Height = 1085
           Top = 60
-          Width = 444
+          Width = 446
           TitleButtons = False
           AutoSort = True
           KeyStrokes = <          
@@ -115,7 +115,6 @@ object FormLogowanie: TFormLogowanie
           DrawFullLine = False
           FocusColor = clRed
           SelectedColor = clHighlight
-          GridLineStyle = psSolid
           DataSource = DSLiteraList
           DefaultRowHeight = 60
           Font.Height = -53
@@ -134,7 +133,7 @@ object FormLogowanie: TFormLogowanie
           Left = 0
           Height = 60
           Top = 0
-          Width = 444
+          Width = 446
           Align = alTop
           Caption = '↑'
           Enabled = False
@@ -145,8 +144,8 @@ object FormLogowanie: TFormLogowanie
         object BtnLeftPgDown: TSpeedButton
           Left = 0
           Height = 60
-          Top = 805
-          Width = 444
+          Top = 1145
+          Width = 446
           Align = alBottom
           Caption = '↓'
           Enabled = False
@@ -160,31 +159,31 @@ object FormLogowanie: TFormLogowanie
       AnchorSideRight.Control = PnlFrame
       AnchorSideRight.Side = asrBottom
       Left = 451
-      Height = 902
+      Height = 1241
       Top = 1
-      Width = 788
+      Width = 2948
       Align = alLeft
       Anchors = [akTop, akLeft, akRight, akBottom]
-      ClientHeight = 902
-      ClientWidth = 788
+      ClientHeight = 1241
+      ClientWidth = 2948
       TabOrder = 1
       object GbRight: TGroupBox
         Left = 1
-        Height = 900
+        Height = 1239
         Top = 1
-        Width = 786
+        Width = 2946
         Align = alClient
         Caption = 'Wybierz operatora:'
-        ClientHeight = 865
-        ClientWidth = 782
+        ClientHeight = 1205
+        ClientWidth = 2944
         Font.Height = -27
         ParentFont = False
         TabOrder = 0
         object RxLoginList: TMVRxDBGrid
           Left = 0
-          Height = 745
+          Height = 1085
           Top = 60
-          Width = 782
+          Width = 2944
           TitleButtons = False
           AutoSort = True
           KeyStrokes = <          
@@ -249,7 +248,6 @@ object FormLogowanie: TFormLogowanie
           DrawFullLine = False
           FocusColor = clRed
           SelectedColor = clHighlight
-          GridLineStyle = psSolid
           DataSource = DSLoginList
           DefaultRowHeight = 60
           Font.Height = -53
@@ -268,7 +266,7 @@ object FormLogowanie: TFormLogowanie
           Left = 0
           Height = 60
           Top = 0
-          Width = 782
+          Width = 2944
           Align = alTop
           Caption = '↑'
           Enabled = False
@@ -279,8 +277,8 @@ object FormLogowanie: TFormLogowanie
         object BtnRightPgDown: TSpeedButton
           Left = 0
           Height = 60
-          Top = 805
-          Width = 782
+          Top = 1145
+          Width = 2944
           Align = alBottom
           Caption = '↓'
           Enabled = False
@@ -293,17 +291,17 @@ object FormLogowanie: TFormLogowanie
     object Panel4: TPanel
       Left = 1
       Height = 80
-      Top = 903
-      Width = 1238
+      Top = 1242
+      Width = 3398
       Align = alBottom
       Caption = 'MULTIVAC PRIMA'
       ClientHeight = 80
-      ClientWidth = 1238
+      ClientWidth = 3398
       Font.Height = -27
       ParentFont = False
       TabOrder = 2
       object BtnZaloguj: TSpeedButton
-        Left = 997
+        Left = 3157
         Height = 78
         Top = 1
         Width = 240
@@ -356,6 +354,7 @@ object FormLogowanie: TFormLogowanie
         DataType = ftString
         Name = 'litera'
         ParamType = ptInput
+        SQLType = stString
       end>
     Left = 544
     Top = 416
@@ -364,6 +363,7 @@ object FormLogowanie: TFormLogowanie
         DataType = ftString
         Name = 'litera'
         ParamType = ptInput
+        SQLType = stString
       end>
     object ZLoginListOPR_ID: TLongintField
       Alignment = taLeftJustify

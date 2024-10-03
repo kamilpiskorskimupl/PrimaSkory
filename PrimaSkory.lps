@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
-    <Version Value="11"/>
-    <BuildModes Active="Win32"/>
-    <Units Count="12">
+    <Version Value="12"/>
+    <BuildModes Active="Linux64"/>
+    <Units Count="37">
       <Unit0>
         <Filename Value="PrimaSkory.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="56" Y="49"/>
+        <CursorPos X="21" Y="9"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -15,9 +15,9 @@
         <Filename Value="uconfig.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uConfig"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="186"/>
-        <CursorPos X="59" Y="244"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="121"/>
+        <CursorPos X="9" Y="129"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -25,9 +25,8 @@
         <Filename Value="uversion.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVersion"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <CursorPos X="27" Y="26"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="49" Y="26"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -38,8 +37,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uCommons"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="52" Y="17"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="74" Y="18"/>
         <UsageCount Value="212"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -51,12 +50,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLogowanie"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="82"/>
-        <CursorPos X="69" Y="82"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="52" Y="36"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="uekranglowny.pas"/>
@@ -65,9 +62,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uEkranGlowny"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="167"/>
-        <CursorPos X="33" Y="186"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="260"/>
+        <CursorPos X="12" Y="266"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -77,14 +75,14 @@
         <UnitName Value="uDebug"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="48" Y="80"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="45"/>
       </Unit6>
       <Unit7>
         <Filename Value="../components/Lazarus-zeosdbo/src/plain/ZPlainDbLibDriver.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="633"/>
         <CursorPos Y="653"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="79"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
       <Unit8>
@@ -93,154 +91,347 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="104"/>
         <CursorPos X="30" Y="165"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="14"/>
       </Unit8>
       <Unit9>
         <Filename Value="/usr/lib64/lazarus/lcl/include/wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5645"/>
         <CursorPos Y="5676"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="34"/>
       </Unit9>
       <Unit10>
         <Filename Value="/usr/lib64/lazarus/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1813"/>
         <CursorPos Y="1858"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="7"/>
       </Unit10>
       <Unit11>
         <Filename Value="../components/Lazarus-Multivac/package-runtime/udebug.pas"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="34" Y="36"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="75"/>
+        <CursorPos X="60" Y="134"/>
+        <UsageCount Value="11"/>
       </Unit11>
+      <Unit12>
+        <Filename Value="ucommons.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/dbc/ZDbcIntfs.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4602"/>
+        <CursorPos Y="4624"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/dbc/ZDbcDbLib.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="746"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZAbstractDataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="34"/>
+        <CursorPos Y="1030"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="../components/Lazarus-Multivac/package/udbdaterange.pas"/>
+        <UnitName Value="uDBDateRange"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="204"/>
+        <CursorPos X="5" Y="204"/>
+        <UsageCount Value="9"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/Rx/rxdbgrid_print/rxdbgridprintgrid.pas"/>
+        <UnitName Value="RxDBGridPrintGrid"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="17"/>
+        <CursorPos X="23" Y="39"/>
+        <UsageCount Value="7"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/Rx/rxdbgrid_export_spreadsheet/rxdbgridexportspreadsheet.pas"/>
+        <UnitName Value="RxDBGridExportSpreadSheet"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="88" Y="77"/>
+        <UsageCount Value="7"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/Rx/LazReport/lrrxcontrols.pas"/>
+        <UnitName Value="lrRxControls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="50" Y="139"/>
+        <UsageCount Value="7"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="../Lazarus/components/lazreport/source/addons/pdfexport/lr_e_pdf.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="438"/>
+        <CursorPos X="77" Y="459"/>
+        <UsageCount Value="7"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZAbstractConnection.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="408"/>
+        <CursorPos X="84" Y="430"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZSqlProcessor.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="45" Y="87"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZDatasetParam.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="940"/>
+        <CursorPos X="3" Y="961"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/packages/fcl-db/src/sqldb/sqldb.pp"/>
+        <UnitName Value="SQLDB"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="784"/>
+        <CursorPos X="26" Y="819"/>
+        <UsageCount Value="7"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/objpas/classes/classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="501"/>
+        <CursorPos X="3" Y="522"/>
+        <UsageCount Value="7"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZSequence.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="61" Y="12"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="../components/Lazarus-Multivac/package-runtime/exsortzeos.pas"/>
+        <UnitName Value="exSortZeos"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="12" Y="69"/>
+        <UsageCount Value="7"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZAbstractRODataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="443"/>
+        <CursorPos X="20" Y="397"/>
+        <UsageCount Value="7"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="../components/Lazarus-Multivac/package-runtime/udbhelpers.pas"/>
+        <UnitName Value="uDBHelpers"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="67"/>
+        <CursorPos X="6" Y="112"/>
+        <UsageCount Value="7"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="../components/Lazarus-brainlock/ubrainlockdbconnection.pas"/>
+        <UnitName Value="uBrainLockDbConnection"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="274"/>
+        <CursorPos X="57" Y="306"/>
+        <UsageCount Value="7"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="../components/Lazarus-brainlock/ubrainlockquery.pas"/>
+        <UnitName Value="uBrainLockQuery"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="156"/>
+        <CursorPos X="83" Y="67"/>
+        <UsageCount Value="7"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="../components/Lazarus-zeosdbo/src/component/ZAbstractDataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1001"/>
+        <CursorPos Y="1030"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="../components/Lazarus-zeosdbo/src/component/ZAbstractRODataset.pas"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="3776"/>
+        <CursorPos Y="3805"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="../components/Lazarus-zeosdbo/src/dbc/ZDbcDbLib.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="717"/>
+        <CursorPos Y="746"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="../Lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1817"/>
+        <CursorPos Y="1851"/>
+        <UsageCount Value="7"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="../Lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos Y="86"/>
+        <UsageCount Value="7"/>
+      </Unit36>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="599" Column="59" TopLine="569"/>
+        <Caret Line="609" Column="13" TopLine="557"/>
       </Position1>
       <Position2>
-        <Filename Value="uekranglowny.pas"/>
-        <Caret Line="610" Column="21" TopLine="569"/>
+        <Filename Value="uconfig.pas"/>
+        <Caret Line="112" Column="70" TopLine="79"/>
       </Position2>
       <Position3>
-        <Filename Value="uekranglowny.pas"/>
-        <Caret Line="614" Column="21" TopLine="569"/>
+        <Filename Value="uconfig.pas"/>
+        <Caret Line="153" Column="66" TopLine="113"/>
       </Position3>
       <Position4>
-        <Filename Value="uekranglowny.pas"/>
-        <Caret Line="610" Column="21" TopLine="569"/>
+        <Filename Value="uconfig.pas"/>
+        <Caret Line="164" Column="26" TopLine="122"/>
       </Position4>
       <Position5>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="614" Column="21" TopLine="569"/>
+        <Caret Line="11" Column="52"/>
       </Position5>
       <Position6>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="615" Column="22" TopLine="570"/>
+        <Caret Line="34" Column="86"/>
       </Position6>
       <Position7>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="582" Column="44" TopLine="571"/>
+        <Caret Line="82" Column="20" TopLine="31"/>
       </Position7>
       <Position8>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="198" Column="48" TopLine="175"/>
+        <Caret Line="234" Column="70" TopLine="204"/>
       </Position8>
       <Position9>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="220" Column="18" TopLine="175"/>
+        <Caret Line="266" Column="12" TopLine="224"/>
       </Position9>
       <Position10>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="126" Column="15" TopLine="98"/>
+        <Caret Line="267" Column="12" TopLine="225"/>
       </Position10>
       <Position11>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="220" Column="18" TopLine="169"/>
+        <Caret Line="269" Column="12" TopLine="227"/>
       </Position11>
       <Position12>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="437" Column="25" TopLine="386"/>
+        <Caret Line="266" Column="99" TopLine="246"/>
       </Position12>
       <Position13>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="608" Column="26" TopLine="557"/>
+        <Caret Line="92" Column="26" TopLine="68"/>
       </Position13>
       <Position14>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="437" Column="18" TopLine="408"/>
+        <Caret Line="103" Column="25" TopLine="68"/>
       </Position14>
       <Position15>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="442" Column="51" TopLine="408"/>
+        <Caret Line="104" Column="26" TopLine="68"/>
       </Position15>
       <Position16>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="455" Column="53" TopLine="408"/>
+        <Caret Line="106" Column="23" TopLine="68"/>
       </Position16>
       <Position17>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="466" Column="53" TopLine="415"/>
+        <Caret Line="107" Column="23" TopLine="68"/>
       </Position17>
       <Position18>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="475" Column="53" TopLine="424"/>
+        <Caret Line="92" Column="26" TopLine="68"/>
       </Position18>
       <Position19>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="488" Column="53" TopLine="438"/>
+        <Caret Line="107" Column="14" TopLine="68"/>
       </Position19>
       <Position20>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="500" Column="51" TopLine="450"/>
+        <Caret Line="286" Column="46" TopLine="257"/>
       </Position20>
       <Position21>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="506" Column="53" TopLine="456"/>
+        <Caret Line="287" Column="18" TopLine="267"/>
       </Position21>
       <Position22>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="522" Column="51" TopLine="472"/>
+        <Caret Line="288" Column="18" TopLine="267"/>
       </Position22>
       <Position23>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="109" Column="25" TopLine="81"/>
+        <Caret Line="289" Column="18" TopLine="267"/>
       </Position23>
       <Position24>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="196" Column="19" TopLine="166"/>
+        <Caret Line="81" Column="18" TopLine="57"/>
       </Position24>
       <Position25>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="298" Column="36" TopLine="250"/>
+        <Caret Line="286" Column="18" TopLine="244"/>
       </Position25>
       <Position26>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="300" Column="48" TopLine="262"/>
+        <Caret Line="287" Column="18" TopLine="245"/>
       </Position26>
       <Position27>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="305" Column="48" TopLine="262"/>
+        <Caret Line="288" Column="18" TopLine="246"/>
       </Position27>
       <Position28>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="300" Column="40" TopLine="262"/>
+        <Caret Line="268" Column="28" TopLine="247"/>
       </Position28>
       <Position29>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="298" Column="28" TopLine="262"/>
+        <Caret Line="328" Column="71" TopLine="297"/>
       </Position29>
       <Position30>
         <Filename Value="uekranglowny.pas"/>
-        <Caret Line="208" Column="32" TopLine="167"/>
+        <Caret Line="170" Column="68" TopLine="147"/>
       </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
-      <Modes Count="0" ActiveMode=""/>
+      <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
 </CONFIG>

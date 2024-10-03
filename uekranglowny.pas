@@ -7,8 +7,8 @@ interface
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ComCtrls, DBCtrls, Buttons, Grids, Calendar, DateTimePicker, switches,
-  rxdbgrid, rxswitch, rxclock, ZDataset, LCLType, uConfig, uMVRxDBGrid,
-  character, Sockets, uDebug, uVersion;
+  rxdbgrid, rxswitch, rxclock, ZDataset, ZAbstractRODataset, LCLType, uConfig,
+  uMVRxDBGrid, character, Sockets, uDebug, uVersion;
 
 type
 
@@ -79,6 +79,7 @@ type
     ZListaWazenWAZ_NR_UBOJOWY: TLongintField;
     ZLoadSettings: TZReadOnlyQuery;
     ZLoadTempData: TZReadOnlyQuery;
+    ZScanNoteRESULT: TZRawStringField;
     ZStatusWazenia: TZReadOnlyQuery;
     ZLoadTempVal: TZReadOnlyQuery;
     ZListaWazen: TZReadOnlyQuery;

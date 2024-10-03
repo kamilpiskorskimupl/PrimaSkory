@@ -5,7 +5,8 @@ unit uCommons;
 interface
 
 uses
-  Classes, SysUtils, DB, ZConnection, ZDataset, uconfig, LazUTF8, udebug;
+  Classes, SysUtils, DB, ZConnection, ZDataset, ZSqlMonitor, uconfig, LazUTF8,
+  udebug;
 
 type
 
@@ -14,6 +15,7 @@ type
   TCommons = class(TDataModule)
     DbWysylka: TZConnection;
     ZQueryANSI: TZQuery;
+    ZSQLMonitor1: TZSQLMonitor;
     procedure DataModuleCreate(Sender: TObject);
   end;
 
@@ -28,12 +30,12 @@ implementation
 
 procedure TCommons.DataModuleCreate(Sender: TObject);
 begin
+  ZSQLMonitor1.Active := Config.bDebugZeos;
   DbWysylka.HostName := Config.sDB_Server;
   DbWysylka.Port := Config.iDB_Port;
   DbWysylka.Protocol := Config.sDB_Protocol;
   DbWysylka.LibraryLocation := Config.sDB_Library;
   DbWysylka.ClientCodepage := Config.sDB_ClientCP;
-  DbWysylka.AutoEncodeStrings := Config.bDB_AutoEncodeStrings;
   DbWysylka.User := Config.sDB_UserName;
   DbWysylka.Password := Config.sDB_Password;
 end;
